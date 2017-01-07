@@ -12,16 +12,27 @@
 //
 
 import UIKit
+import AWSMobileHubHelper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Override point for customization after application launch.
-        return AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
+        let launchWasSuccessful = AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
+        
+        // if the user is logged in, we immediate present the main view, else we display the loginview controller
+        if (AWSIdentityManager.defaultIdentityManager().loggedIn) {
+            // the user is logged in, we show the home screen
+            return launchWasSuccessful
+        }
+        
+        presentSignInViewController()
+
+        return launchWasSuccessful
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -66,6 +77,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         AWSMobileClient.sharedInstance.application(application, didReceiveRemoteNotification: userInfo)
+    }
+    
+    // MARK: Private helper methods
+    
+    private func presentSignInViewController() {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
     }
     
 }

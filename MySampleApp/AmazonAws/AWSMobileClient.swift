@@ -101,8 +101,6 @@ class AWSMobileClient: NSObject {
     */
     func didFinishLaunching(application: UIApplication, withOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         print("didFinishLaunching:")
-
-        // Register the sign in provider instances with their unique identifier
         
         // set up cognito user pool
         setupUserPool()
