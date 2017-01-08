@@ -10,26 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="xGJ-si-YWs">
-            <objects>
-                <navigationController storyboardIdentifier="SignInHome" id="9PB-s8-dBP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YQ3-eR-d3a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="7ID-qk-Zgg" kind="relationship" relationship="rootViewController" id="pDO-fT-EFn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RXb-oX-o1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-990" y="452"/>
-        </scene>
-        <!--View Controller-->
+        <!--Sign In Home View Controller-->
         <scene sceneID="9lb-v0-L7o">
             <objects>
-                <viewController id="7ID-qk-Zgg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pa6-5d-FU1"/>
                         <viewControllerLayoutGuide type="bottom" id="yTx-Zc-DCi"/>
@@ -46,10 +30,13 @@
                                     <segue destination="zFR-uy-L27" kind="show" id="Xlc-Sh-4hF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3Z-g2-Owg">
-                                <rect key="frame" x="134" y="409" width="107" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcy-ab-xqW">
+                                <rect key="frame" x="134" y="472" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccountPressed:" destination="7ID-qk-Zgg" eventType="touchUpInside" id="EKF-wE-dNE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

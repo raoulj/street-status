@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A73C4A71E21A77C00134A5C /* SignInHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */; };
 		E7A30F0408D9B59800000000 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29A1D5B6D500000000 /* Launch Screen.storyboard */; };
 		E7A30F040B66B09500000000 /* AWSAPIGateway.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29640DDD5A00000000 /* AWSAPIGateway.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7A30F040B66B09500000001 /* AWSAPIGateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29640DDD5A00000000 /* AWSAPIGateway.framework */; };
@@ -72,6 +73,16 @@
 		E7A30F04FF1AB63100000000 /* CloudLogicAPI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29451F510100000000 /* CloudLogicAPI.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A2E86B51E22A6A000C0586A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96C847930000000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66DC04E0000000000000000;
+			remoteInfo = MySampleApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		FAF5FAC90000000000000000 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -132,7 +143,7 @@
 		1DD70E29B23DE73100000000 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1DD70E29B9E7C38D00000000 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1DD70E29CA00A0BB00000000 /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoSQLSampleDataGenerator.swift; path = MySampleApp/Demo/NoSQL/NoSQLSampleDataGenerator.swift; sourceTree = SOURCE_ROOT; };
-		1DD70E29CE278F5500000000 /* MySampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = MySampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DD70E29CE278F5500000000 /* StreetStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = StreetStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD70E29CE50B60700000000 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1DD70E29D19B87C000000000 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Responses.swift; path = MySampleApp/AmazonAws/Models/NoSQL/Responses.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E29D29C648000000000 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = MySampleApp/Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
@@ -156,6 +167,8 @@
 		1DD70E29F27798AA00000000 /* PushNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PushNotification.storyboard; path = MySampleApp/Demo/Push/PushNotification.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29F900180100000000 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MySampleApp/App/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29FF35641300000000 /* UserPoolMFAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPoolMFAViewController.swift; path = MySampleApp/App/SignIn/UserPools/UserPoolMFAViewController.swift; sourceTree = SOURCE_ROOT; };
+		5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetStatusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInHomeViewController.swift; path = mysampleapp/app/signin/SignInHomeViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +191,13 @@
 				E7A30F04B768B57800000000 /* Foundation.framework in Frameworks */,
 				E7A30F04298A687F00000000 /* MediaPlayer.framework in Frameworks */,
 				E7A30F04FEED6E4500000000 /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2E86AD1E22A6A000C0586A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +333,8 @@
 		B401C979933C64C200000000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1DD70E29CE278F5500000000 /* MySampleApp.app */,
+				1DD70E29CE278F5500000000 /* StreetStatus.app */,
+				5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,13 +343,13 @@
 			isa = PBXGroup;
 			children = (
 				B401C9799323922F00000000 /* Frameworks */,
-				B401C979A38784E000000000 /* MySampleApp */,
+				B401C979A38784E000000000 /* StreetStatus */,
 				B401C979933C64C200000000 /* Products */,
 			);
 			name = mainGroup;
 			sourceTree = "<group>";
 		};
-		B401C979A38784E000000000 /* MySampleApp */ = {
+		B401C979A38784E000000000 /* StreetStatus */ = {
 			isa = PBXGroup;
 			children = (
 				B401C979B7FD3D1000000000 /* AmazonAws */,
@@ -336,7 +357,7 @@
 				B401C97910E5A9B400000000 /* Demo */,
 				1DD70E2998C8BAA900000000 /* MySampleApp.entitlements */,
 			);
-			name = MySampleApp;
+			name = StreetStatus;
 			path = mysampleapp;
 			sourceTree = "<group>";
 		};
@@ -367,6 +388,7 @@
 			children = (
 				1DD70E29E2AD9FFE00000000 /* SignIn.storyboard */,
 				1DD70E29F0212C1600000000 /* SignInViewController.swift */,
+				5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */,
 				B401C979D57D131300000000 /* UserPools */,
 			);
 			name = SignIn;
@@ -410,9 +432,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E66DC04E0000000000000000 /* MySampleApp */ = {
+		5A2E86AF1E22A6A000C0586A /* StreetStatusUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 218C37090000000000000001 /* Build configuration list for PBXNativeTarget "MySampleApp" */;
+			buildConfigurationList = 5A2E86B71E22A6A000C0586A /* Build configuration list for PBXNativeTarget "StreetStatusUITests" */;
+			buildPhases = (
+				5A2E86AC1E22A6A000C0586A /* Sources */,
+				5A2E86AD1E22A6A000C0586A /* Frameworks */,
+				5A2E86AE1E22A6A000C0586A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A2E86B61E22A6A000C0586A /* PBXTargetDependency */,
+			);
+			name = StreetStatusUITests;
+			productName = MySampleAppUITests;
+			productReference = 5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E66DC04E0000000000000000 /* StreetStatus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 218C37090000000000000001 /* Build configuration list for PBXNativeTarget "StreetStatus" */;
 			buildPhases = (
 				E1F174220000000000000001 /* ShellScript */,
 				1870857F0000000000000000 /* Sources */,
@@ -425,9 +465,9 @@
 			);
 			dependencies = (
 			);
-			name = MySampleApp;
+			name = StreetStatus;
 			productName = MySampleApp;
-			productReference = 1DD70E29CE278F5500000000 /* MySampleApp.app */;
+			productReference = 1DD70E29CE278F5500000000 /* StreetStatus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -436,10 +476,17 @@
 		96C847930000000000000000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					5A2E86AF1E22A6A000C0586A = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E66DC04E0000000000000000;
+					};
+				};
 			};
-			buildConfigurationList = 218C37090000000000000000 /* Build configuration list for PBXProject "MySampleApp" */;
+			buildConfigurationList = 218C37090000000000000000 /* Build configuration list for PBXProject "StreetStatus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -452,12 +499,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E66DC04E0000000000000000 /* MySampleApp */,
+				E66DC04E0000000000000000 /* StreetStatus */,
+				5A2E86AF1E22A6A000C0586A /* StreetStatusUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A2E86AE1E22A6A000C0586A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A032D2C0000000000000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,6 +590,7 @@
 				E7A30F04F4F07DDA00000000 /* ResponsesTable.swift in Sources */,
 				E7A30F04DEFF4D2900000000 /* AWSAPI_IX86YNYR95_RequestSchema.m in Sources */,
 				E7A30F04EF7BC39000000000 /* AWSConfiguration.swift in Sources */,
+				5A73C4A71E21A77C00134A5C /* SignInHomeViewController.swift in Sources */,
 				E7A30F04443982F900000000 /* SignInViewControllerExtensions.swift in Sources */,
 				E7A30F0457CBF13300000000 /* CloudLogicAPIListViewController.swift in Sources */,
 				E7A30F041F83C25000000000 /* NoSQLModelHelpers.swift in Sources */,
@@ -547,7 +603,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A2E86AC1E22A6A000C0586A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A2E86B61E22A6A000C0586A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E66DC04E0000000000000000 /* StreetStatus */;
+			targetProxy = 5A2E86B51E22A6A000C0586A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		49524373386D956C00000000 /* Release */ = {
@@ -687,10 +758,47 @@
 			};
 			name = Debug;
 		};
+		5A2E86B81E22A6A000C0586A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = MySampleAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ele381.raouljr.MySampleAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MySampleApp;
+			};
+			name = Debug;
+		};
+		5A2E86B91E22A6A000C0586A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				INFOPLIST_FILE = MySampleAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ele381.raouljr.MySampleAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MySampleApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		218C37090000000000000000 /* Build configuration list for PBXProject "MySampleApp" */ = {
+		218C37090000000000000000 /* Build configuration list for PBXProject "StreetStatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4952437346F3E10800000000 /* Debug */,
@@ -699,11 +807,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		218C37090000000000000001 /* Build configuration list for PBXNativeTarget "MySampleApp" */ = {
+		218C37090000000000000001 /* Build configuration list for PBXNativeTarget "StreetStatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4952437346F3E10800000001 /* Debug */,
 				49524373386D956C00000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A2E86B71E22A6A000C0586A /* Build configuration list for PBXNativeTarget "StreetStatusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A2E86B81E22A6A000C0586A /* Debug */,
+				5A2E86B91E22A6A000C0586A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

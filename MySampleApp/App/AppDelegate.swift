@@ -25,12 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let launchWasSuccessful = AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
         
         // if the user is logged in, we immediate present the main view, else we display the loginview controller
-        if (AWSIdentityManager.defaultIdentityManager().loggedIn) {
-            // the user is logged in, we show the home screen
-            return launchWasSuccessful
+        if (!AWSIdentityManager.defaultIdentityManager().loggedIn) {
+            // the user is not logged in, show the login screen
+            presentSignInViewController()
+            //else we continue to the home
         }
         
-        presentSignInViewController()
+        
 
         return launchWasSuccessful
     }
@@ -87,8 +88,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let initialViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
         
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        
+        self.window?.rootViewController = navigationController
     }
     
 }
