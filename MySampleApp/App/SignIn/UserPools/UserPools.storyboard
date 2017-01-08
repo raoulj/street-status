@@ -28,7 +28,7 @@
         <!--Sign-Up View Controller-->
         <scene sceneID="UNL-it-beS">
             <objects>
-                <viewController storyboardIdentifier="SignUp" title="Sign-Up" id="tBM-jZ-I7y" userLabel="Sign-Up View Controller" customClass="UserPoolSignUpViewController" customModule="MySampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUp" title="Sign-Up" id="tBM-jZ-I7y" userLabel="Sign-Up View Controller" customClass="UserPoolSignUpViewController" customModule="StreetStatus" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7hn-wh-vfF"/>
                         <viewControllerLayoutGuide type="bottom" id="Ysf-nz-1Cg"/>
@@ -172,7 +172,7 @@
         <!--Sign-Up Confirmation View Controller-->
         <scene sceneID="2rI-Jb-dcB">
             <objects>
-                <viewController storyboardIdentifier="SignUpConfirmation" title="Sign-Up Confirmation" id="oYn-kQ-Tog" userLabel="Sign-Up Confirmation View Controller" customClass="UserPoolSignUpConfirmationViewController" customModule="MySampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpConfirmation" title="Sign-Up Confirmation" id="oYn-kQ-Tog" userLabel="Sign-Up Confirmation View Controller" customClass="UserPoolSignUpConfirmationViewController" customModule="StreetStatus" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jca-3G-Q5u"/>
                         <viewControllerLayoutGuide type="bottom" id="GCB-VV-q3w"/>
@@ -302,7 +302,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="NvC-5J-jny">
             <objects>
-                <viewController storyboardIdentifier="ForgotPassword" title="Forgot Password" id="P72-4o-dGU" userLabel="Forgot Password View Controller" customClass="UserPoolForgotPasswordViewController" customModule="MySampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPassword" title="Forgot Password" id="P72-4o-dGU" userLabel="Forgot Password View Controller" customClass="UserPoolForgotPasswordViewController" customModule="StreetStatus" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PN8-a0-H46"/>
                         <viewControllerLayoutGuide type="bottom" id="FH6-oT-BVw"/>
@@ -382,7 +382,7 @@
         <!--New Password View Controller-->
         <scene sceneID="0ba-H5-MAh">
             <objects>
-                <viewController storyboardIdentifier="NewPassword" title="Forgot Password" id="s3d-oM-nuL" userLabel="New Password View Controller" customClass="UserPoolNewPasswordViewController" customModule="MySampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPassword" title="Forgot Password" id="s3d-oM-nuL" userLabel="New Password View Controller" customClass="UserPoolNewPasswordViewController" customModule="StreetStatus" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ugx-3t-FYa"/>
                         <viewControllerLayoutGuide type="bottom" id="lfy-tb-FOG"/>

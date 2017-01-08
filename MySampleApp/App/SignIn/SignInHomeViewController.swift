@@ -12,22 +12,12 @@ class SignInHomeViewController: UIViewController {
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        print("Sign In Loading.")
-        
-        
-        // Custom UI Setup
-        //customProviderButton.addTarget(self, action: "handleCustomSignIn", forControlEvents: .TouchUpInside)
-        //customCreateAccountButton.addTarget(self, action: "handleUserPoolSignUp", forControlEvents: .TouchUpInside)
-        //customForgotPasswordButton.addTarget(self, action: "handleUserPoolForgotPassword", forControlEvents: .TouchUpInside)
-        //customProviderButton.setImage(UIImage(named: "LoginButton"), forState: .Normal)
-        
+        print("Loading the Home Login view.")
         
     }
     
-    deinit {
-        //NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)
-    }
     
     // MARK: - Utility Methods
 
@@ -36,10 +26,9 @@ class SignInHomeViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func createAccountPressed(sender: AnyObject) {
-        print("test")
+        print("Create account button presed.")
+        let storyboard = UIStoryboard(name: "UserPools", bundle: nil)
+        let view = storyboard.instantiateViewControllerWithIdentifier("SignUp")
+        self.navigationController?.pushViewController(view, animated: true)
     }
 }
-//
-//let storyboard = UIStoryboard(name: "UserPools", bundle: nil)
-//let view = storyboard.instantiateViewControllerWithIdentifier("SignUp")
-//self.navigationController?.pushViewController(view, animated: true)

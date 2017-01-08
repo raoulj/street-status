@@ -13,7 +13,8 @@
         <!--Sign In Home View Controller-->
         <scene sceneID="9lb-v0-L7o">
             <objects>
-                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" sceneMemberID="viewController"
+                    customModule="StreetStatus">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pa6-5d-FU1"/>
                         <viewControllerLayoutGuide type="bottom" id="yTx-Zc-DCi"/>
