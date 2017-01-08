@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="zFR-uy-L27" kind="show" id="Xlc-Sh-4hF"/>
+                                    <segue destination="zFR-uy-L27" kind="show" id="NUG-LY-Jeg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcy-ab-xqW">
@@ -50,7 +50,7 @@
         <!--Sign-In View Controller-->
         <scene sceneID="Pcg-oB-wor">
             <objects>
-                <viewController storyboardIdentifier="SignIn" title="Sign-In View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zFR-uy-L27" customClass="SignInViewController" customModule="MySampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" title="Sign-In View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zFR-uy-L27" customClass="SignInViewController" customModule="StreetStatus" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Izq-ir-PWZ"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ts-qe-o9Z"/>
