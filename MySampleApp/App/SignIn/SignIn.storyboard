@@ -13,8 +13,7 @@
         <!--Sign In Home View Controller-->
         <scene sceneID="9lb-v0-L7o">
             <objects>
-                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" sceneMemberID="viewController"
-                    customModule="StreetStatus">
+                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" customModule="StreetStatus" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pa6-5d-FU1"/>
                         <viewControllerLayoutGuide type="bottom" id="yTx-Zc-DCi"/>
@@ -81,13 +80,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgZ-Wa-Fth">
-                                <rect key="frame" x="20" y="146" width="276" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Create New Account">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So3-eD-i8k">
                                 <rect key="frame" x="285" y="249" width="30" height="34"/>
                                 <constraints>
@@ -103,13 +95,6 @@
                                         <exclude reference="jlu-kd-jR0"/>
                                     </mask>
                                 </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuh-aP-yxj">
-                                <rect key="frame" x="304" y="146" width="276" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Forgot your password?">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ER-3W-z3p">
                                 <rect key="frame" x="285" y="207" width="30" height="34"/>
@@ -134,30 +119,35 @@
                                     <constraint firstAttribute="height" id="NSg-L9-oXS"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTo-gR-rA6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTo-gR-rA6">
                                 <rect key="frame" x="20" y="28" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="test"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuh-aP-yxj">
+                                <rect key="frame" x="49" y="320" width="276" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Forgot your password?">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="leading" secondItem="Ygm-EJ-04R" secondAttribute="leadingMargin" id="0m7-xl-Xbk"/>
                             <constraint firstItem="So3-eD-i8k" firstAttribute="top" secondItem="2ER-3W-z3p" secondAttribute="bottom" constant="8" symbolic="YES" id="7f6-Jy-w30"/>
-                            <constraint firstItem="fgZ-Wa-Fth" firstAttribute="leading" secondItem="Ygm-EJ-04R" secondAttribute="leadingMargin" id="7p8-8o-hz3"/>
                             <constraint firstItem="2ER-3W-z3p" firstAttribute="centerX" secondItem="Ygm-EJ-04R" secondAttribute="centerX" id="7zJ-g2-KxM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zuh-aP-yxj" secondAttribute="trailing" id="ACb-as-OgS"/>
-                            <constraint firstItem="fgZ-Wa-Fth" firstAttribute="baseline" secondItem="Zuh-aP-yxj" secondAttribute="baseline" id="DgF-hJ-Yu4"/>
                             <constraint firstItem="jAO-db-UaA" firstAttribute="leading" secondItem="Ygm-EJ-04R" secondAttribute="leadingMargin" id="F52-NP-vJW"/>
-                            <constraint firstItem="fgZ-Wa-Fth" firstAttribute="width" secondItem="Zuh-aP-yxj" secondAttribute="width" id="JgC-Fm-sPk"/>
-                            <constraint firstItem="fgZ-Wa-Fth" firstAttribute="top" secondItem="ut2-wf-oqq" secondAttribute="bottom" constant="8" symbolic="YES" id="M37-Mr-bQz"/>
+                            <constraint firstItem="Zuh-aP-yxj" firstAttribute="centerY" secondItem="Ygm-EJ-04R" secondAttribute="centerY" id="HDh-in-gH4"/>
                             <constraint firstItem="So3-eD-i8k" firstAttribute="centerX" secondItem="Ygm-EJ-04R" secondAttribute="centerX" id="MQu-Nq-pl3"/>
                             <constraint firstItem="ut2-wf-oqq" firstAttribute="centerX" secondItem="Ygm-EJ-04R" secondAttribute="centerX" id="O09-1E-wxR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CTo-gR-rA6" secondAttribute="trailing" id="TLC-NZ-3CY"/>
                             <constraint firstItem="CTo-gR-rA6" firstAttribute="leading" secondItem="Ygm-EJ-04R" secondAttribute="leadingMargin" id="Ved-7r-7Z0"/>
+                            <constraint firstItem="Zuh-aP-yxj" firstAttribute="centerX" secondItem="Ygm-EJ-04R" secondAttribute="centerX" id="W5n-1W-jbp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JBL-6p-4bg" secondAttribute="trailing" id="YYq-NL-inC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jAO-db-UaA" secondAttribute="trailing" id="bk7-fx-oKp"/>
-                            <constraint firstItem="Zuh-aP-yxj" firstAttribute="leading" secondItem="fgZ-Wa-Fth" secondAttribute="trailing" constant="8" symbolic="YES" id="dj5-aF-hv3"/>
                             <constraint firstItem="jAO-db-UaA" firstAttribute="top" secondItem="Izq-ir-PWZ" secondAttribute="bottom" id="g24-2I-B6x"/>
                             <constraint firstItem="ut2-wf-oqq" firstAttribute="top" secondItem="JBL-6p-4bg" secondAttribute="bottom" constant="8" symbolic="YES" id="hIg-NO-GOx"/>
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="top" secondItem="CTo-gR-rA6" secondAttribute="bottom" constant="8" symbolic="YES" id="haw-Vo-QpL"/>
@@ -167,7 +157,6 @@
                     <navigationItem key="navigationItem" id="yqR-HB-jEf"/>
                     <connections>
                         <outlet property="anchorView" destination="jAO-db-UaA" id="v3U-kz-ClL"/>
-                        <outlet property="customCreateAccountButton" destination="fgZ-Wa-Fth" id="YJo-FJ-WzT"/>
                         <outlet property="customForgotPasswordButton" destination="Zuh-aP-yxj" id="hqr-dR-r7f"/>
                         <outlet property="customPasswordField" destination="JBL-6p-4bg" id="frL-GS-a3H"/>
                         <outlet property="customProviderButton" destination="ut2-wf-oqq" id="pyd-4W-o03"/>

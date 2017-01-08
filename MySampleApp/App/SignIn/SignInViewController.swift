@@ -50,11 +50,9 @@ class SignInViewController: UIViewController {
                     // perform successful login actions here
             })
 
-                facebookButton.removeFromSuperview()
-                googleButton.removeFromSuperview()
                 // Custom UI Setup
                 customProviderButton.addTarget(self, action: "handleCustomSignIn", forControlEvents: .TouchUpInside)
-                customCreateAccountButton.addTarget(self, action: "handleUserPoolSignUp", forControlEvents: .TouchUpInside)
+                
                 customForgotPasswordButton.addTarget(self, action: "handleUserPoolForgotPassword", forControlEvents: .TouchUpInside)
                 customProviderButton.setImage(UIImage(named: "LoginButton"), forState: .Normal)
     }
