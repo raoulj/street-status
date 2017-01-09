@@ -24,6 +24,7 @@ class UserPoolSignUpViewController: UIViewController {
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var passwordConfirmation: UITextField!
     
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -40,35 +41,46 @@ class UserPoolSignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func onSignUp(sender: AnyObject) {
+    @IBAction func onSignUp(sender: AnyObject) {    
 
-        guard let userNameValue = self.userName.text where !userNameValue.isEmpty,
-            let passwordValue = self.password.text where !passwordValue.isEmpty else {
-            UIAlertView(title: "Missing Required Fields",
-                        message: "Username / Password are required for registration.",
-                        delegate: nil,
-                        cancelButtonTitle: "Ok").show()
+        guard let netID = self.userName.text?.lowercaseString where !netID.isEmpty && netID.isAlphanumeric
+            else {
+                self.requiredFieldsError("Please provide a Princeton NetID.")
+                return
+        }
+        
+        //we get the email from the netID
+        let emailValue = netID + "@princeton.edu"
+        
+        guard let passwordValue = self.password.text where !passwordValue.isEmpty
+            else {
+                self.requiredFieldsError("Please provide a password.")
+                return
+        }
+        
+        guard let passwordConfirmationValue = self.passwordConfirmation.text where !passwordConfirmationValue.isEmpty
+            else {
+                self.requiredFieldsError("Please repeat your password.")
+                return
+        }
+        
+        // If the passwords do not match, we don't allow anything to happen
+        if passwordValue != passwordConfirmationValue {
+            UIAlertView(title: "Password Mismatch", message: "Make sure your passwords matched!", delegate: nil, cancelButtonTitle: "Ok.  I'll fix it!").show()
             return
         }
         
+        
         var attributes = [AWSCognitoIdentityUserAttributeType]()
         
-        if let phoneValue = self.phone.text where !phoneValue.isEmpty {
-            let phone = AWSCognitoIdentityUserAttributeType()
-            phone.name = "phone_number"
-            phone.value = phoneValue
-            attributes.append(phone)
-        }
-        
-        if let emailValue = self.email.text where !emailValue.isEmpty {
-            let email = AWSCognitoIdentityUserAttributeType()
-            email.name = "email"
-            email.value = emailValue
-            attributes.append(email)
-        }
+        // email
+        let email = AWSCognitoIdentityUserAttributeType()
+        email.name = "email"
+        email.value = emailValue
+        attributes.append(email)
         
         //sign up the user
-        self.pool?.signUp(userNameValue, password: passwordValue, userAttributes: attributes, validationData: nil).continueWithBlock {[weak self] (task: AWSTask) -> AnyObject? in
+        self.pool?.signUp(netID, password: passwordValue, userAttributes: attributes, validationData: nil).continueWithBlock {[weak self] (task: AWSTask) -> AnyObject? in
             guard let strongSelf = self else { return nil }
             dispatch_async(dispatch_get_main_queue(), { 
                 if let error = task.error {
@@ -77,7 +89,7 @@ class UserPoolSignUpViewController: UIViewController {
                         delegate: nil,
                         cancelButtonTitle: "Ok").show()
                 } else if let result = task.result as? AWSCognitoIdentityUserPoolSignUpResponse  {
-                    // handle the case where user has to confirm his identity via email / SMS
+                    // handle the case where user has to confirm his/her identity via email / SMS
                     if (result.user.confirmedStatus != AWSCognitoIdentityUserStatus.Confirmed) {
                         strongSelf.sentTo = result.codeDeliveryDetails?.destination
                         strongSelf.performSegueWithIdentifier("SignUpConfirmSegue", sender:sender)
@@ -97,5 +109,21 @@ class UserPoolSignUpViewController: UIViewController {
 
     @IBAction func onCancel(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    //MARK: - Private Helpers
+    
+    private func requiredFieldsError(message : String) {
+        UIAlertView(title: "Missing Required Fields",
+                    message: message,
+                    delegate: nil,
+                    cancelButtonTitle: "Ok.  I'll fix it!").show()
+    }
+}
+
+extension String {
+    var isAlphanumeric: Bool {
+        let characterset = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
+        return self.rangeOfCharacterFromSet(characterset.invertedSet) == nil
     }
 }

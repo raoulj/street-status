@@ -72,6 +72,29 @@ class SignInViewController: UIViewController {
             // If no error reported by SignInProvider, discard the sign-in view controller.
             if error == nil {
                 dispatch_async(dispatch_get_main_queue(),{
+                    //if the login is successful, we change what the root view controller is
+                    if (AWSIdentityManager.defaultIdentityManager().loggedIn) {
+                        
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Main")
+                        
+                        let navigationController = UINavigationController(rootViewController: initialViewController)
+                        
+                        navigationController.navigationBar.tintColor = UIColor(red: 0.953, green: 0.522, blue: 0.251, alpha: 1.00)
+                        
+                        
+                        // code below is for a gentle navigation to the home view
+                        let overlayView = self.view.snapshotViewAfterScreenUpdates(false)!
+                        navigationController.view.addSubview(overlayView)
+                        appDelegate.window!.rootViewController = navigationController
+                        UIView.animateWithDuration(0.7, delay: 0, options: .TransitionCrossDissolve, animations: {
+                            overlayView.alpha = 0}, completion: { finished in
+                        overlayView.removeFromSuperview()
+                        })
+                    }
+                    
+                    //otherwise, we just return to the root login screen
                     self.navigationController?.popToRootViewControllerAnimated(true)
                 })
             }

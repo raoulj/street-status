@@ -343,13 +343,13 @@
 			isa = PBXGroup;
 			children = (
 				B401C9799323922F00000000 /* Frameworks */,
-				B401C979A38784E000000000 /* StreetStatus */,
+				B401C979A38784E000000000 /* MySampleApp */,
 				B401C979933C64C200000000 /* Products */,
 			);
 			name = mainGroup;
 			sourceTree = "<group>";
 		};
-		B401C979A38784E000000000 /* StreetStatus */ = {
+		B401C979A38784E000000000 /* MySampleApp */ = {
 			isa = PBXGroup;
 			children = (
 				B401C979B7FD3D1000000000 /* AmazonAws */,
@@ -357,7 +357,7 @@
 				B401C97910E5A9B400000000 /* Demo */,
 				1DD70E2998C8BAA900000000 /* MySampleApp.entitlements */,
 			);
-			name = StreetStatus;
+			name = MySampleApp;
 			path = mysampleapp;
 			sourceTree = "<group>";
 		};

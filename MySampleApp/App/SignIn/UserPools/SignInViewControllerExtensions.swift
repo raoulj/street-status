@@ -83,8 +83,8 @@ extension SignInViewController: AWSCognitoUserPoolsSignInHandler {
         guard let username = self.customUserIdField.text where !username.isEmpty,
             let password = self.customPasswordField.text where !password.isEmpty else {
                 dispatch_async(dispatch_get_main_queue(), {
-                    UIAlertView(title: "Missing UserName / Password",
-                        message: "Please enter a valid user name / password.",
+                    UIAlertView(title: "Missing NetID / Password",
+                        message: "Please make sure all inputs are filled.",
                         delegate: nil,
                         cancelButtonTitle: "Ok").show()
                 })

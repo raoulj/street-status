@@ -26,7 +26,7 @@ class SignInHomeViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func createAccountPressed(sender: AnyObject) {
-        print("Create account button presed.")
+        print("Create account button pressed.")
         let storyboard = UIStoryboard(name: "UserPools", bundle: nil)
         let view = storyboard.instantiateViewControllerWithIdentifier("SignUp")
         self.navigationController?.pushViewController(view, animated: true)
