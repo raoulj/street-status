@@ -14,7 +14,7 @@
 import UIKit
 import AWSMobileHubHelper
 
-class MainViewController: UITableViewController {
+class MainViewController: UIViewController {
     
     var demoFeatures: [DemoFeature] = []
     var signInObserver: AnyObject!
@@ -69,15 +69,12 @@ class MainViewController: UITableViewController {
         demoFeatures.append(demoFeature)
 
                 signInObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self] (note: NSNotification) -> Void in
-                        guard let strongSelf = self else { return }
                         print("Sign In Observer observed sign in.")
-                        strongSelf.setupRightBarButtonItem()
+                    
                 })
                 
                 signOutObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignOutNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self](note: NSNotification) -> Void in
-                        guard let strongSelf = self else { return }
                         print("Sign Out Observer observed sign out.")
-                        strongSelf.setupRightBarButtonItem()
                 })
                 
                 setupRightBarButtonItem()
@@ -93,11 +90,8 @@ class MainViewController: UITableViewController {
                 static var onceToken: dispatch_once_t = 0
             }
             
-            dispatch_once(&Static.onceToken, {
-                let loginButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: .Done, target: self, action: nil)
-                self.navigationItem.rightBarButtonItem = loginButton
-            })
-            
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, style: .Done, target: self, action: nil)
+        
             if (AWSIdentityManager.defaultIdentityManager().loggedIn) {
                 navigationItem.rightBarButtonItem!.title = NSLocalizedString("Sign-Out", comment: "Label for the logout button.")
                 navigationItem.rightBarButtonItem!.action = "handleLogout"
@@ -108,28 +102,6 @@ class MainViewController: UITableViewController {
             }
     }
     
-    // MARK: - UITableViewController delegates
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MainViewCell")!
-        let demoFeature = demoFeatures[indexPath.row]
-        cell.imageView!.image = UIImage(named: demoFeature.icon)
-        cell.textLabel!.text = demoFeature.displayName
-        cell.detailTextLabel!.text = demoFeature.detailText
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return demoFeatures.count
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let demoFeature = demoFeatures[indexPath.row]
-        let storyboard = UIStoryboard(name: demoFeature.storyboard, bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier(demoFeature.storyboard)
-        self.navigationController!.pushViewController(viewController, animated: true)
-    }
 
     
     func goToLogin() {
@@ -142,13 +114,45 @@ class MainViewController: UITableViewController {
     func handleLogout() {
         if (AWSIdentityManager.defaultIdentityManager().loggedIn) {
             AWSIdentityManager.defaultIdentityManager().logoutWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
+            
+                self.presentSignInViewController()
                 self.navigationController!.popToRootViewControllerAnimated(false)
-                self.setupRightBarButtonItem()
             })
             // print("Logout Successful: \(signInProvider.getDisplayName)");
         } else {
             assert(false)
         }
+    }
+    
+    
+    private func presentSignInViewController() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
+        let homeLoginViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
+        
+        
+        //gentle navigation to the login screen
+        let overlayView = self.view.snapshotViewAfterScreenUpdates(false)!
+//        self.view.addSubview(overlayView)
+
+        UIView.transitionWithView(appDelegate.window!,
+                                  duration: 0.0,
+                                  options: [UIViewAnimationOptions.TransitionCrossDissolve],
+                                  animations: { overlayView.alpha = 0
+                                    self.navigationController!.view.backgroundColor = UIColor.clearColor()
+                                  },
+                                  completion: { (finished: Bool) -> () in
+                                    appDelegate.window?.rootViewController = homeLoginViewController
+                                    appDelegate.window?.makeKeyAndVisible()
+                                  })
+    }
+    
+    private func makeNavBarTransparent(navigationController: UINavigationController) {
+        navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.translucent = true
     }
 }
 
