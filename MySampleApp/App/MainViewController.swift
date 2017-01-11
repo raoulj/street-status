@@ -127,26 +127,21 @@ class MainViewController: UIViewController {
     
     private func presentSignInViewController() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
         let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
-        let homeLoginViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
         
+        let navigationController = UINavigationController(rootViewController: initialViewController)
         
-        //gentle navigation to the login screen
+        // code below is for a gentle navigation to the home view
         let overlayView = self.view.snapshotViewAfterScreenUpdates(false)!
-//        self.view.addSubview(overlayView)
-
-        UIView.transitionWithView(appDelegate.window!,
-                                  duration: 0.0,
-                                  options: [UIViewAnimationOptions.TransitionCrossDissolve],
-                                  animations: { overlayView.alpha = 0
-                                    self.navigationController!.view.backgroundColor = UIColor.clearColor()
-                                  },
-                                  completion: { (finished: Bool) -> () in
-                                    appDelegate.window?.rootViewController = homeLoginViewController
-                                    appDelegate.window?.makeKeyAndVisible()
-                                  })
+        navigationController.view.addSubview(overlayView)
+        appDelegate.window!.rootViewController = navigationController
+        UIView.animateWithDuration(0.7, delay: 0, options: .TransitionCrossDissolve, animations: {
+            overlayView.alpha = 0}, completion: { finished in
+                overlayView.removeFromSuperview()
+        })
+        
+        makeNavBarTransparent(navigationController)
     }
     
     private func makeNavBarTransparent(navigationController: UINavigationController) {

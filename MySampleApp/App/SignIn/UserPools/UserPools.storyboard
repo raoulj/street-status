@@ -84,13 +84,6 @@
                                     <action selector="onSignUp:" destination="tBM-jZ-I7y" eventType="touchUpInside" id="T9v-1n-fnU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4j-HO-7jS">
-                                <rect key="frame" x="163.5" y="629" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="onCancel:" destination="tBM-jZ-I7y" eventType="touchUpInside" id="gEV-Nc-Ydr"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXk-JX-LCh">
                                 <rect key="frame" x="21" y="236" width="333" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -125,7 +118,6 @@
                             <constraint firstItem="Ci8-dE-DEf" firstAttribute="top" secondItem="JQi-lF-vg6" secondAttribute="bottom" id="Mie-pt-26w"/>
                             <constraint firstItem="aXb-g9-G4s" firstAttribute="top" secondItem="LAT-XP-02o" secondAttribute="bottom" constant="8" id="NU8-Lw-IAe"/>
                             <constraint firstItem="Q1B-aQ-RW2" firstAttribute="top" secondItem="Ci8-dE-DEf" secondAttribute="bottom" constant="15" id="PEI-Vn-Hoa"/>
-                            <constraint firstItem="Ysf-nz-1Cg" firstAttribute="top" secondItem="v4j-HO-7jS" secondAttribute="bottom" constant="8" symbolic="YES" id="Qg7-lZ-hKQ"/>
                             <constraint firstItem="Q1B-aQ-RW2" firstAttribute="leading" secondItem="LAT-XP-02o" secondAttribute="leading" id="Uei-51-XfU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LAT-XP-02o" secondAttribute="trailing" constant="5" id="UiK-0R-fgL"/>
                             <constraint firstItem="qWe-ny-TUd" firstAttribute="leading" secondItem="Z83-6q-CAy" secondAttribute="leadingMargin" constant="5" id="VKH-J1-AxM"/>
@@ -133,7 +125,6 @@
                             <constraint firstItem="aXb-g9-G4s" firstAttribute="leading" secondItem="Z83-6q-CAy" secondAttribute="leadingMargin" constant="5" id="dmK-Fb-lMN"/>
                             <constraint firstItem="HJa-Cc-KSk" firstAttribute="bottom" secondItem="7hn-wh-vfF" secondAttribute="bottom" id="he9-p2-RRB"/>
                             <constraint firstItem="dXk-JX-LCh" firstAttribute="leading" secondItem="Z83-6q-CAy" secondAttribute="leadingMargin" constant="5" id="jmU-Ai-QFD"/>
-                            <constraint firstItem="v4j-HO-7jS" firstAttribute="centerX" secondItem="1HX-ux-FXU" secondAttribute="centerX" id="m4w-6V-mLG"/>
                             <constraint firstItem="HJa-Cc-KSk" firstAttribute="trailing" secondItem="JQi-lF-vg6" secondAttribute="trailing" id="uxT-aH-stA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JQi-lF-vg6" secondAttribute="leading" constant="-4" id="x23-uJ-oUo"/>
                             <constraint firstItem="Ci8-dE-DEf" firstAttribute="top" secondItem="JQi-lF-vg6" secondAttribute="bottom" id="xku-QI-FPu"/>
