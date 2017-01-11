@@ -130,7 +130,11 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
         let initialViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
         
+<<<<<<< Updated upstream
         let navigationController = UINavigationController(rootViewController: initialViewController)
+=======
+        self.dismissViewControllerAnimated(true, completion: nil)
+>>>>>>> Stashed changes
         
         // code below is for a gentle navigation to the home view
         let overlayView = self.view.snapshotViewAfterScreenUpdates(false)!
