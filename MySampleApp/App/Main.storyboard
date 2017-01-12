@@ -100,6 +100,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Street Status" id="wI4-Ua-jy5"/>
+                    <connections>
+                        <outlet property="inputStatusButton" destination="Rlw-pR-5cX" id="xId-06-Yoq"/>
+                        <outlet property="profileButton" destination="EQv-M1-bPf" id="kqj-Ep-Ya8"/>
+                        <outlet property="signoutButton" destination="9dw-1e-kRM" id="6pp-Nv-JfP"/>
+                        <outlet property="viewStreetButton" destination="mVS-by-Y5T" id="eGz-Fr-vmz"/>
+                        <outlet property="viewTonightButton" destination="fZz-xb-r6M" id="uWZ-9n-676"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Foj-SS-Ck4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="3113" y="-541"/>
         </scene>
-        <!--View Controller-->
+        <!--Clubs View Controller-->
         <scene sceneID="FQD-9T-iJe">
             <objects>
-                <viewController id="7Js-hy-5GO" sceneMemberID="viewController">
+                <viewController id="7Js-hy-5GO" customClass="ClubsViewController" customModule="StreetStatus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IBo-LT-I3d"/>
                         <viewControllerLayoutGuide type="bottom" id="Ecx-sy-8lz"/>
@@ -194,8 +201,84 @@
                     <view key="view" contentMode="scaleToFill" id="wmq-cu-Q10">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g47-dy-40v">
+                                <rect key="frame" x="53" y="72" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Campus"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-b2-Lbc">
+                                <rect key="frame" x="161" y="72" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cannon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Js0-tg-orY">
+                                <rect key="frame" x="282" y="72" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cap"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga1-M0-xe5">
+                                <rect key="frame" x="55" y="133" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Charter"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-LA-QXV">
+                                <rect key="frame" x="161" y="133" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cloister"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-NT-xfq">
+                                <rect key="frame" x="270" y="133" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Colonial"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-og-jaU">
+                                <rect key="frame" x="54" y="186" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cottage"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-OI-Ugc">
+                                <rect key="frame" x="172" y="186" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ivy"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-0Y-YI9">
+                                <rect key="frame" x="279" y="186" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Quad"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePd-gg-bOO">
+                                <rect key="frame" x="55" y="239" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Terrace"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-qa-EYZ">
+                                <rect key="frame" x="172" y="239" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TI"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-AQ-1Pq">
+                                <rect key="frame" x="276" y="239" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tower"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="campusButton" destination="g47-dy-40v" id="wjD-Mn-6ar"/>
+                        <outlet property="cannonButton" destination="LPA-b2-Lbc" id="Wk7-uY-pYf"/>
+                        <outlet property="capButton" destination="Js0-tg-orY" id="gOX-a2-lhh"/>
+                        <outlet property="charterButton" destination="ga1-M0-xe5" id="5II-6j-Hme"/>
+                        <outlet property="cloisterButton" destination="aKV-LA-QXV" id="v8F-Gh-wIG"/>
+                        <outlet property="colonialButton" destination="BuW-NT-xfq" id="cun-lW-791"/>
+                        <outlet property="cottageButton" destination="bTM-og-jaU" id="vJy-0Q-tVz"/>
+                        <outlet property="ivyButton" destination="iM5-OI-Ugc" id="95a-re-R03"/>
+                        <outlet property="quadButton" destination="Brc-0Y-YI9" id="kNr-Q8-CZK"/>
+                        <outlet property="terraceButton" destination="ePd-gg-bOO" id="WtD-D2-hBp"/>
+                        <outlet property="tiButton" destination="MHy-qa-EYZ" id="6oF-E2-kng"/>
+                        <outlet property="towerButton" destination="Be4-AQ-1Pq" id="bc8-ft-IkE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m3-pp-seU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

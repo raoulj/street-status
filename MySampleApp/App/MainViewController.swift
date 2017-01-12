@@ -16,9 +16,14 @@ import AWSMobileHubHelper
 
 class MainViewController: UIViewController {
     
-    var demoFeatures: [DemoFeature] = []
     var signInObserver: AnyObject!
     var signOutObserver: AnyObject!
+    
+    @IBOutlet weak var viewStreetButton: UIButton!
+    @IBOutlet weak var viewTonightButton: UIButton!
+    @IBOutlet weak var inputStatusButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var signoutButton: UIButton!
     
     // MARK: - View lifecycle
     
@@ -31,77 +36,30 @@ class MainViewController: UIViewController {
         navigationController!.navigationBar.barTintColor = UIColor(red: 0xF5/255.0, green: 0x85/255.0, blue: 0x35/255.0, alpha: 1.0)
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 
+        self.viewStreetButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
+        self.viewTonightButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
+        self.inputStatusButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
+        self.profileButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
+        self.signoutButton.addTarget(self, action: #selector(MainViewController.handleLogout), forControlEvents: .TouchUpInside)
         
-        var demoFeature = DemoFeature.init(
-            name: NSLocalizedString("User Sign-in",
-                comment: "Label for demo menu option."),
-            detail: NSLocalizedString("Enable user login with popular 3rd party providers.",
-                comment: "Description for demo menu option."),
-            icon: "UserIdentityIcon", storyboard: "UserIdentity")
+        signInObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self] (note: NSNotification) -> Void in
+                print("Sign In Observer observed sign in.")
+            
+        })
         
-        demoFeatures.append(demoFeature)
-        
-        demoFeature = DemoFeature.init(
-            name: NSLocalizedString("Push Notifications",
-                comment: "Label for demo menu option."),
-            detail: NSLocalizedString("Send individual or group push notifications to your apps.",
-                comment: "Description for demo menu option."),
-            icon: "PushIcon", storyboard: "PushNotification")
-        
-        demoFeatures.append(demoFeature)
-
-        demoFeature = DemoFeature.init(
-            name: NSLocalizedString("Cloud Logic",
-                comment: "Label for demo menu option."),
-            detail: NSLocalizedString("Run business logic in the cloud without managing servers. Integrate functionality with your app using APIs.",
-                comment: "Description for demo menu option."),
-            icon: "CloudLogicAPIIcon", storyboard: "CloudLogicAPI")
-        
-        demoFeatures.append(demoFeature)
-        
-        demoFeature = DemoFeature.init(
-            name: NSLocalizedString("NoSQL",
-                comment: "Label for demo menu option."),
-            detail: NSLocalizedString("Store data in the cloud.",
-                comment: "Description for demo menu option."),
-            icon: "NoSQLIcon", storyboard: "NoSQLDatabase")
-        
-        demoFeatures.append(demoFeature)
-
-                signInObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self] (note: NSNotification) -> Void in
-                        print("Sign In Observer observed sign in.")
-                    
-                })
-                
-                signOutObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignOutNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self](note: NSNotification) -> Void in
-                        print("Sign Out Observer observed sign out.")
-                })
-                
-                setupRightBarButtonItem()
-    }
+        signOutObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignOutNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self](note: NSNotification) -> Void in
+                print("Sign Out Observer observed sign out.")
+        })
+            }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(signInObserver)
         NSNotificationCenter.defaultCenter().removeObserver(signOutObserver)
     }
-
-    func setupRightBarButtonItem() {
-            struct Static {
-                static var onceToken: dispatch_once_t = 0
-            }
-            
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, style: .Done, target: self, action: nil)
-        
-            if (AWSIdentityManager.defaultIdentityManager().loggedIn) {
-                navigationItem.rightBarButtonItem!.title = NSLocalizedString("Sign-Out", comment: "Label for the logout button.")
-                navigationItem.rightBarButtonItem!.action = "handleLogout"
-            }
-            if !(AWSIdentityManager.defaultIdentityManager().loggedIn) {
-                navigationItem.rightBarButtonItem!.title = NSLocalizedString("Sign-In", comment: "Label for the login button.")
-                navigationItem.rightBarButtonItem!.action = "goToLogin"
-            }
-    }
     
+    func setNavBarTitle() {
+        navigationItem.backBarButtonItem?.title = "Home"
+    }
 
     
     func goToLogin() {
@@ -118,7 +76,6 @@ class MainViewController: UIViewController {
                 self.presentSignInViewController()
                 self.navigationController!.popToRootViewControllerAnimated(false)
             })
-            // print("Logout Successful: \(signInProvider.getDisplayName)");
         } else {
             assert(false)
         }
@@ -130,11 +87,7 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
         let initialViewController = storyboard.instantiateViewControllerWithIdentifier("SignInHome")
         
-<<<<<<< Updated upstream
         let navigationController = UINavigationController(rootViewController: initialViewController)
-=======
-        self.dismissViewControllerAnimated(true, completion: nil)
->>>>>>> Stashed changes
         
         // code below is for a gentle navigation to the home view
         let overlayView = self.view.snapshotViewAfterScreenUpdates(false)!

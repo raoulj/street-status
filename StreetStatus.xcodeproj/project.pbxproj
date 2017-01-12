@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A73C4A71E21A77C00134A5C /* SignInHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */; };
+		5AE676FA1E25F9E2000598C9 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */; };
 		E7A30F0408D9B59800000000 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29A1D5B6D500000000 /* Launch Screen.storyboard */; };
 		E7A30F040B66B09500000000 /* AWSAPIGateway.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29640DDD5A00000000 /* AWSAPIGateway.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7A30F040B66B09500000001 /* AWSAPIGateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29640DDD5A00000000 /* AWSAPIGateway.framework */; };
@@ -169,6 +170,7 @@
 		1DD70E29FF35641300000000 /* UserPoolMFAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPoolMFAViewController.swift; path = MySampleApp/App/SignIn/UserPools/UserPoolMFAViewController.swift; sourceTree = SOURCE_ROOT; };
 		5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetStatusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInHomeViewController.swift; path = mysampleapp/app/signin/SignInHomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubsViewController.swift; path = MySampleApp/App/ClubsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				1DD70E29A1D5B6D500000000 /* Launch Screen.storyboard */,
 				1DD70E29F900180100000000 /* Main.storyboard */,
 				1DD70E291FF2077300000000 /* MainViewController.swift */,
+				5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */,
 				B401C979B94D195C00000000 /* SignIn */,
 				B401C979B400B14400000000 /* SupportingFiles */,
 				B401C979BC88583400000000 /* Utility */,
@@ -581,6 +584,7 @@
 				E7A30F04845A053700000000 /* NoSQLTableViewController.swift in Sources */,
 				E7A30F042F2B820E00000000 /* MainViewController.swift in Sources */,
 				E7A30F04E8EEECD100000000 /* Locations.swift in Sources */,
+				5AE676FA1E25F9E2000598C9 /* ClubsViewController.swift in Sources */,
 				E7A30F048AF19F9D00000000 /* CloudLogicAPI.swift in Sources */,
 				E7A30F0454F5F04F00000000 /* UserPoolSignUpViewController.swift in Sources */,
 				E7A30F0410A642D000000000 /* NoSQLQueryResultViewController.swift in Sources */,
