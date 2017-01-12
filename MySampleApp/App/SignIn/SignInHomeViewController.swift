@@ -16,6 +16,15 @@ class SignInHomeViewController: UIViewController {
         super.viewDidLoad()
         print("Loading the Home Login view.")
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+        navigationController?.view.backgroundColor = UIColor.clearColor()
+        navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
+        
+        // background
+        self.view.addBackground()
+        
     }
     
     

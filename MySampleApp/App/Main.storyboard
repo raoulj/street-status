@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-1553" y="-1058"/>
         </scene>
-        <!--Street Status-->
+        <!--Main View Controller-->
         <scene sceneID="R24-Pp-2Lg">
             <objects>
                 <viewController storyboardIdentifier="Main" id="c32-AB-mnF" customClass="MainViewController" customModule="StreetStatus" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,36 +29,48 @@
                         <viewControllerLayoutGuide type="bottom" id="RAo-Pd-eI8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Skv-l0-QUZ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlw-pR-5cX">
-                                <rect key="frame" x="128" y="394" width="119" height="30"/>
-                                <state key="normal" title="Input Club Status"/>
+                                <rect key="frame" x="125" y="462" width="125" height="32"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="Input Club Status">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="wAf-fP-Tet" kind="show" id="IJW-6T-bIv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-M1-bPf">
-                                <rect key="frame" x="130" y="461" width="116" height="30"/>
-                                <state key="normal" title="View Your Profile"/>
+                                <rect key="frame" x="126" y="531" width="124" height="32"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="View Your Profile">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="9EB-SK-lfn" kind="show" id="LDE-B2-aXG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dw-1e-kRM">
-                                <rect key="frame" x="132" y="525" width="112" height="30"/>
-                                <state key="normal" title="Leave the Street"/>
+                                <rect key="frame" x="128.5" y="597" width="119" height="32"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="Leave the Street">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZz-xb-r6M">
-                                <rect key="frame" x="111" y="326" width="152" height="30"/>
-                                <state key="normal" title="What's Open Tonight?"/>
+                                <rect key="frame" x="106.5" y="392" width="161" height="32"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="What's Open Tonight?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="JrW-yW-D1p" kind="show" id="007-5m-hP6"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84R-s9-YUF">
-                                <rect key="frame" x="16" y="20" width="343" height="197"/>
+                                <rect key="frame" x="16" y="84" width="343" height="197"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some pretty header here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-CP-bTB">
                                         <rect key="frame" x="76" y="88" width="191" height="21"/>
@@ -75,14 +87,17 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVS-by-Y5T">
-                                <rect key="frame" x="135" y="257" width="105" height="30"/>
-                                <state key="normal" title="View the Street"/>
+                                <rect key="frame" x="132" y="321" width="111" height="32"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="View the Street">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="7Js-hy-5GO" kind="show" id="mRm-Qg-ykD"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rlw-pR-5cX" firstAttribute="centerX" secondItem="Skv-l0-QUZ" secondAttribute="centerX" id="71z-sD-uKh"/>
                             <constraint firstItem="Rlw-pR-5cX" firstAttribute="top" secondItem="fZz-xb-r6M" secondAttribute="bottom" constant="38" id="AeK-tA-g9d"/>
@@ -99,7 +114,8 @@
                             <constraint firstItem="mVS-by-Y5T" firstAttribute="centerX" secondItem="Skv-l0-QUZ" secondAttribute="centerX" id="vSR-sI-ZDn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Street Status" id="wI4-Ua-jy5"/>
+                    <navigationItem key="navigationItem" id="wI4-Ua-jy5"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="inputStatusButton" destination="Rlw-pR-5cX" id="xId-06-Yoq"/>
                         <outlet property="profileButton" destination="EQv-M1-bPf" id="kqj-Ep-Ya8"/>
@@ -121,7 +137,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mSm-ob-3hM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HrX-bh-QFQ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -163,7 +179,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eyr-Lb-6Np"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uGw-3w-0k8">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -181,7 +197,7 @@
                         <viewControllerLayoutGuide type="bottom" id="79T-z6-fOl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qiw-qY-Q96">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -202,68 +218,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g47-dy-40v">
-                                <rect key="frame" x="53" y="72" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g47-dy-40v">
+                                <rect key="frame" x="30" y="64" width="103" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Campus"/>
+                                <state key="normal" title="Campus" image="Campus"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-b2-Lbc">
-                                <rect key="frame" x="161" y="72" width="53" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Js0-tg-orY">
+                                <rect key="frame" x="260" y="64" width="107" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cannon"/>
+                                <state key="normal" title="Cap" image="Cap"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Js0-tg-orY">
-                                <rect key="frame" x="282" y="72" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga1-M0-xe5">
+                                <rect key="frame" x="30" y="176" width="103" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cap"/>
+                                <state key="normal" title="Charter" image="Charter"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga1-M0-xe5">
-                                <rect key="frame" x="55" y="133" width="53" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-LA-QXV">
+                                <rect key="frame" x="149" y="176" width="106" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Charter"/>
+                                <state key="normal" title="Cloister" image="Cloister"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-LA-QXV">
-                                <rect key="frame" x="161" y="133" width="53" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-NT-xfq">
+                                <rect key="frame" x="260" y="176" width="94" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cloister"/>
+                                <state key="normal" title="Colonial" image="Colonial"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-NT-xfq">
-                                <rect key="frame" x="270" y="133" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-og-jaU">
+                                <rect key="frame" x="30" y="280" width="103" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Colonial"/>
+                                <state key="normal" title="Cottage" image="Cottage"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-og-jaU">
-                                <rect key="frame" x="54" y="186" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-OI-Ugc">
+                                <rect key="frame" x="149" y="280" width="112" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cottage"/>
+                                <state key="normal" title="Ivy" image="Ivy"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-OI-Ugc">
-                                <rect key="frame" x="172" y="186" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-0Y-YI9">
+                                <rect key="frame" x="260" y="292" width="94" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ivy"/>
+                                <state key="normal" title="Quad" image="Quad"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-0Y-YI9">
-                                <rect key="frame" x="279" y="186" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePd-gg-bOO">
+                                <rect key="frame" x="30" y="406" width="103" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Quad"/>
+                                <state key="normal" title="Terrace" image="Terrace"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePd-gg-bOO">
-                                <rect key="frame" x="55" y="239" width="53" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-qa-EYZ">
+                                <rect key="frame" x="149" y="406" width="106" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Terrace"/>
+                                <state key="normal" title="TI" image="TI"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-qa-EYZ">
-                                <rect key="frame" x="172" y="239" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-AQ-1Pq">
+                                <rect key="frame" x="269" y="406" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="TI"/>
+                                <state key="normal" title="Tower" image="Tower"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-AQ-1Pq">
-                                <rect key="frame" x="276" y="239" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-b2-Lbc">
+                                <rect key="frame" x="153" y="64" width="98" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Tower"/>
+                                <state key="normal" title="Cannon" image="Cannon"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -283,7 +299,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m3-pp-seU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3113" y="-1223"/>
+            <point key="canvasLocation" x="3112.8000000000002" y="-1219.3403298350825"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Campus" width="164" height="164"/>
+        <image name="Cannon" width="424" height="424"/>
+        <image name="Cap" width="150" height="138"/>
+        <image name="Charter" width="441" height="423"/>
+        <image name="Cloister" width="536" height="443"/>
+        <image name="Colonial" width="300" height="300"/>
+        <image name="Cottage" width="136" height="143"/>
+        <image name="Ivy" width="125" height="125"/>
+        <image name="Quad" width="422" height="448"/>
+        <image name="TI" width="434" height="451"/>
+        <image name="Terrace" width="280" height="280"/>
+        <image name="Tower" width="300" height="300"/>
+    </resources>
 </document>

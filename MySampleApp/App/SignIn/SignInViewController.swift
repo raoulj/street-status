@@ -43,6 +43,9 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
          print("Sign In Loading.")
         
+        // background
+        //self.view.addBackground()
+        
             didSignInObserver =  NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification,
                 object: AWSIdentityManager.defaultIdentityManager(),
                 queue: NSOperationQueue.mainQueue(),
@@ -55,6 +58,13 @@ class SignInViewController: UIViewController {
                 
                 customForgotPasswordButton.addTarget(self, action: "handleUserPoolForgotPassword", forControlEvents: .TouchUpInside)
                 customProviderButton.setImage(UIImage(named: "LoginButton"), forState: .Normal)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
+        navigationController?.view.backgroundColor = UIColor.clearColor()
+        navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
+        
     }
     
     deinit {
