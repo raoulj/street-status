@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E66DC04E0000000000000000"
-               BuildableName = "StreetStatus.app"
-               BlueprintName = "StreetStatus"
-               ReferencedContainer = "container:StreetStatus.xcodeproj">
+               BuildableName = "StreetSmart.app"
+               BlueprintName = "StreetSmart"
+               ReferencedContainer = "container:StreetSmart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66DC04E0000000000000000"
-            BuildableName = "StreetStatus.app"
-            BlueprintName = "StreetStatus"
-            ReferencedContainer = "container:StreetStatus.xcodeproj">
+            BuildableName = "StreetSmart.app"
+            BlueprintName = "StreetSmart"
+            ReferencedContainer = "container:StreetSmart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66DC04E0000000000000000"
-            BuildableName = "StreetStatus.app"
-            BlueprintName = "StreetStatus"
-            ReferencedContainer = "container:StreetStatus.xcodeproj">
+            BuildableName = "StreetSmart.app"
+            BlueprintName = "StreetSmart"
+            ReferencedContainer = "container:StreetSmart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66DC04E0000000000000000"
-            BuildableName = "StreetStatus.app"
-            BlueprintName = "StreetStatus"
-            ReferencedContainer = "container:StreetStatus.xcodeproj">
+            BuildableName = "StreetSmart.app"
+            BlueprintName = "StreetSmart"
+            ReferencedContainer = "container:StreetSmart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

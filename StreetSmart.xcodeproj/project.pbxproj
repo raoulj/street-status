@@ -149,7 +149,7 @@
 		1DD70E29B23DE73100000000 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1DD70E29B9E7C38D00000000 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1DD70E29CA00A0BB00000000 /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoSQLSampleDataGenerator.swift; path = MySampleApp/Demo/NoSQL/NoSQLSampleDataGenerator.swift; sourceTree = SOURCE_ROOT; };
-		1DD70E29CE278F5500000000 /* StreetStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = StreetStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DD70E29CE278F5500000000 /* StreetSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = StreetSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD70E29CE50B60700000000 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1DD70E29D19B87C000000000 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Responses.swift; path = MySampleApp/AmazonAws/Models/NoSQL/Responses.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E29D29C648000000000 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = MySampleApp/Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		1DD70E29F27798AA00000000 /* PushNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = PushNotification.storyboard; path = MySampleApp/Demo/Push/PushNotification.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29F900180100000000 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MySampleApp/App/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29FF35641300000000 /* UserPoolMFAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPoolMFAViewController.swift; path = MySampleApp/App/SignIn/UserPools/UserPoolMFAViewController.swift; sourceTree = SOURCE_ROOT; };
-		5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetStatusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2E86B01E22A6A000C0586A /* StreetSmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetSmartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInHomeViewController.swift; path = mysampleapp/app/signin/SignInHomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubsViewController.swift; path = MySampleApp/App/ClubsViewController.swift; sourceTree = SOURCE_ROOT; };
 		836BE9A31E277468003929F1 /* SetBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetBackground.swift; path = MySampleApp/App/SetBackground.swift; sourceTree = SOURCE_ROOT; };
@@ -351,8 +351,8 @@
 		B401C979933C64C200000000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1DD70E29CE278F5500000000 /* StreetStatus.app */,
-				5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */,
+				1DD70E29CE278F5500000000 /* StreetSmart.app */,
+				5A2E86B01E22A6A000C0586A /* StreetSmartUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -450,9 +450,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5A2E86AF1E22A6A000C0586A /* StreetStatusUITests */ = {
+		5A2E86AF1E22A6A000C0586A /* StreetSmartUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A2E86B71E22A6A000C0586A /* Build configuration list for PBXNativeTarget "StreetStatusUITests" */;
+			buildConfigurationList = 5A2E86B71E22A6A000C0586A /* Build configuration list for PBXNativeTarget "StreetSmartUITests" */;
 			buildPhases = (
 				5A2E86AC1E22A6A000C0586A /* Sources */,
 				5A2E86AD1E22A6A000C0586A /* Frameworks */,
@@ -463,14 +463,14 @@
 			dependencies = (
 				5A2E86B61E22A6A000C0586A /* PBXTargetDependency */,
 			);
-			name = StreetStatusUITests;
+			name = StreetSmartUITests;
 			productName = MySampleAppUITests;
-			productReference = 5A2E86B01E22A6A000C0586A /* StreetStatusUITests.xctest */;
+			productReference = 5A2E86B01E22A6A000C0586A /* StreetSmartUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		E66DC04E0000000000000000 /* StreetStatus */ = {
+		E66DC04E0000000000000000 /* StreetSmart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 218C37090000000000000001 /* Build configuration list for PBXNativeTarget "StreetStatus" */;
+			buildConfigurationList = 218C37090000000000000001 /* Build configuration list for PBXNativeTarget "StreetSmart" */;
 			buildPhases = (
 				E1F174220000000000000001 /* ShellScript */,
 				1870857F0000000000000000 /* Sources */,
@@ -483,9 +483,9 @@
 			);
 			dependencies = (
 			);
-			name = StreetStatus;
+			name = StreetSmart;
 			productName = MySampleApp;
-			productReference = 1DD70E29CE278F5500000000 /* StreetStatus.app */;
+			productReference = 1DD70E29CE278F5500000000 /* StreetSmart.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -504,7 +504,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 218C37090000000000000000 /* Build configuration list for PBXProject "StreetStatus" */;
+			buildConfigurationList = 218C37090000000000000000 /* Build configuration list for PBXProject "StreetSmart" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -517,8 +517,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E66DC04E0000000000000000 /* StreetStatus */,
-				5A2E86AF1E22A6A000C0586A /* StreetStatusUITests */,
+				E66DC04E0000000000000000 /* StreetSmart */,
+				5A2E86AF1E22A6A000C0586A /* StreetSmartUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -639,7 +639,7 @@
 /* Begin PBXTargetDependency section */
 		5A2E86B61E22A6A000C0586A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E66DC04E0000000000000000 /* StreetStatus */;
+			target = E66DC04E0000000000000000 /* StreetSmart */;
 			targetProxy = 5A2E86B51E22A6A000C0586A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -822,7 +822,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		218C37090000000000000000 /* Build configuration list for PBXProject "StreetStatus" */ = {
+		218C37090000000000000000 /* Build configuration list for PBXProject "StreetSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4952437346F3E10800000000 /* Debug */,
@@ -831,7 +831,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		218C37090000000000000001 /* Build configuration list for PBXNativeTarget "StreetStatus" */ = {
+		218C37090000000000000001 /* Build configuration list for PBXNativeTarget "StreetSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4952437346F3E10800000001 /* Debug */,
@@ -840,7 +840,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A2E86B71E22A6A000C0586A /* Build configuration list for PBXNativeTarget "StreetStatusUITests" */ = {
+		5A2E86B71E22A6A000C0586A /* Build configuration list for PBXNativeTarget "StreetSmartUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A2E86B81E22A6A000C0586A /* Debug */,
