@@ -23,7 +23,7 @@
         <!--Main View Controller-->
         <scene sceneID="R24-Pp-2Lg">
             <objects>
-                <viewController storyboardIdentifier="Main" id="c32-AB-mnF" customClass="MainViewController" customModule="StreetStatus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="c32-AB-mnF" customClass="MainViewController" customModule="StreetSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOA-Hd-PSK"/>
                         <viewControllerLayoutGuide type="bottom" id="RAo-Pd-eI8"/>
@@ -53,14 +53,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dw-1e-kRM">
-                                <rect key="frame" x="128.5" y="597" width="119" height="32"/>
+                                <rect key="frame" x="128" y="597" width="119" height="32"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <state key="normal" title="Leave the Street">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZz-xb-r6M">
-                                <rect key="frame" x="106.5" y="392" width="161" height="32"/>
+                                <rect key="frame" x="107" y="392" width="161" height="32"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <state key="normal" title="What's Open Tonight?">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -131,7 +131,7 @@
         <!--Profile View Controller-->
         <scene sceneID="rrx-RF-7Uw">
             <objects>
-                <viewController id="9EB-SK-lfn" customClass="ProfileViewController" customModule="StreetStatus" sceneMemberID="viewController">
+                <viewController id="9EB-SK-lfn" customClass="ProfileViewController" customModule="StreetSmart" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sFu-sP-x7t"/>
                         <viewControllerLayoutGuide type="bottom" id="mSm-ob-3hM"/>
@@ -173,7 +173,7 @@
         <!--Input View Controller-->
         <scene sceneID="eda-bn-rGe">
             <objects>
-                <viewController id="wAf-fP-Tet" customClass="InputViewController" customModule="StreetStatus" sceneMemberID="viewController">
+                <viewController id="wAf-fP-Tet" customClass="InputViewController" customModule="StreetSmart" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w0i-8f-2JX"/>
                         <viewControllerLayoutGuide type="bottom" id="eyr-Lb-6Np"/>
@@ -191,7 +191,7 @@
         <!--Tonight View Controller-->
         <scene sceneID="DfG-Fz-aya">
             <objects>
-                <viewController id="JrW-yW-D1p" customClass="TonightViewController" customModule="StreetStatus" sceneMemberID="viewController">
+                <viewController id="JrW-yW-D1p" customClass="TonightViewController" customModule="StreetSmart" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cxX-6x-Whm"/>
                         <viewControllerLayoutGuide type="bottom" id="79T-z6-fOl"/>
@@ -209,7 +209,7 @@
         <!--Clubs View Controller-->
         <scene sceneID="FQD-9T-iJe">
             <objects>
-                <viewController id="7Js-hy-5GO" customClass="ClubsViewController" customModule="StreetStatus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Js-hy-5GO" customClass="ClubsViewController" customModule="StreetSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IBo-LT-I3d"/>
                         <viewControllerLayoutGuide type="bottom" id="Ecx-sy-8lz"/>
@@ -223,7 +223,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Campus" image="Campus"/>
                                 <connections>
-                                    <segue destination="2sF-yc-paU" kind="show" id="TaN-wG-gFQ"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="l97-mB-ufO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Js0-tg-orY">
@@ -231,7 +231,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cap" image="Cap"/>
                                 <connections>
-                                    <segue destination="t16-ez-CBx" kind="show" id="Mwb-hi-f98"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="Etu-bH-rRP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga1-M0-xe5">
@@ -239,7 +239,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Charter" image="Charter"/>
                                 <connections>
-                                    <segue destination="oJM-o6-ClW" kind="show" id="Xi9-LB-30N"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="c5J-rZ-1Bh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-LA-QXV">
@@ -247,7 +247,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cloister" image="Cloister"/>
                                 <connections>
-                                    <segue destination="OuY-8v-AG0" kind="show" id="Yq4-2g-qCs"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="eeg-zR-e6p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-NT-xfq">
@@ -255,7 +255,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Colonial" image="Colonial"/>
                                 <connections>
-                                    <segue destination="YGC-PK-LEW" kind="show" id="t97-6p-tBP"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="Acu-g1-FNw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTM-og-jaU">
@@ -263,7 +263,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cottage" image="Cottage"/>
                                 <connections>
-                                    <segue destination="rI0-Df-q0M" kind="show" id="ClG-S8-sYn"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="is2-69-dfp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-OI-Ugc">
@@ -271,7 +271,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ivy" image="Ivy"/>
                                 <connections>
-                                    <segue destination="20p-yE-AQG" kind="show" id="Zz2-LK-t9o"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="coi-X4-5kV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-0Y-YI9">
@@ -279,7 +279,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Quad" image="Quad"/>
                                 <connections>
-                                    <segue destination="ol1-Gv-f5w" kind="show" id="J4h-Oj-Ikb"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="Ffg-sH-W3G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePd-gg-bOO">
@@ -287,7 +287,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Terrace" image="Terrace"/>
                                 <connections>
-                                    <segue destination="sMP-dh-nXa" kind="show" id="XhF-tA-qkq"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="sWc-3u-yBm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-qa-EYZ">
@@ -303,7 +303,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tower" image="Tower"/>
                                 <connections>
-                                    <segue destination="ySn-Fn-9Og" kind="show" id="aZ9-zO-B4r"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="rbz-Mh-O0t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-b2-Lbc">
@@ -311,7 +311,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cannon" image="Cannon"/>
                                 <connections>
-                                    <segue destination="Mk0-ca-iOK" kind="show" id="olo-UC-s4m"/>
+                                    <segue destination="Yoc-Zq-c7w" kind="show" id="8xQ-YC-zGE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Campus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svc-Ij-09S">
@@ -433,82 +433,10 @@
             </objects>
             <point key="canvasLocation" x="3112.8000000000002" y="-1219.3403298350825"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="vSr-Fb-2Cc">
-            <objects>
-                <viewController id="2sF-yc-paU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JgL-jk-jD5"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gya-Dv-SaO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lVf-aU-VIs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PJS-Ti-POK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4852" y="-2713"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="3FL-f6-KnT">
-            <objects>
-                <viewController id="oJM-o6-ClW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ocI-es-XiD"/>
-                        <viewControllerLayoutGuide type="bottom" id="u4P-nx-uJz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hsZ-87-9Qf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O4Y-Bf-uqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4848" y="-2038"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5Sa-k8-VS2">
-            <objects>
-                <viewController id="rI0-Df-q0M" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hHK-8r-cxn"/>
-                        <viewControllerLayoutGuide type="bottom" id="r0y-Uc-Spp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ve2-kz-WFc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xmA-D6-UpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4843" y="-1364"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="J9k-FS-fK7">
-            <objects>
-                <viewController id="sMP-dh-nXa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Z2j-0o-Nw2"/>
-                        <viewControllerLayoutGuide type="bottom" id="3ap-Mi-l44"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Rn-sN-KGa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Acc-jZ-zvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4843" y="-680"/>
-        </scene>
-        <!--View Controller-->
+        <!--Club View Controller-->
         <scene sceneID="Mqu-gE-3ys">
             <objects>
-                <viewController id="Yoc-Zq-c7w" sceneMemberID="viewController">
+                <viewController id="Yoc-Zq-c7w" customClass="ClubViewController" customModule="StreetSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GMl-Hz-wF5"/>
                         <viewControllerLayoutGuide type="bottom" id="X7O-f7-Apb"/>
@@ -521,133 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDu-Mg-OJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5637" y="-674"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="mfm-zX-jjY">
-            <objects>
-                <viewController id="ySn-Fn-9Og" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wLN-jb-OeJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="0N5-MY-mc6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NJ3-cI-Rng">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9On-9i-JDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6402" y="-668"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="3cO-Zc-a60">
-            <objects>
-                <viewController id="20p-yE-AQG" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ce0-IE-4uk"/>
-                        <viewControllerLayoutGuide type="bottom" id="AX0-n1-7Ub"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KXu-jq-MrZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e9b-1n-PN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5637" y="-1355"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Sxn-Iy-rHv">
-            <objects>
-                <viewController id="ol1-Gv-f5w" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="83c-BL-tSy"/>
-                        <viewControllerLayoutGuide type="bottom" id="guV-D4-d9r"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AxH-C7-X6e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EeF-eZ-JlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6402" y="-1348"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="51V-yl-FyE">
-            <objects>
-                <viewController id="OuY-8v-AG0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ldg-He-dv3"/>
-                        <viewControllerLayoutGuide type="bottom" id="oIG-yx-c0E"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y2Q-eS-4k8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gOj-vO-cGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5641" y="-2039"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="W1k-Bb-Gwu">
-            <objects>
-                <viewController id="YGC-PK-LEW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N3P-q6-ENI"/>
-                        <viewControllerLayoutGuide type="bottom" id="3gY-JH-mfi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xXl-wa-L81">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwf-HD-clv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6402" y="-2026"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gB9-K2-G09">
-            <objects>
-                <viewController id="Mk0-ca-iOK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bUR-LP-0TI"/>
-                        <viewControllerLayoutGuide type="bottom" id="cWH-Os-GXP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Srr-yo-uqg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9b9-cM-5Mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5642" y="-2706"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Wnn-3t-hke">
-            <objects>
-                <viewController id="t16-ez-CBx" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="f0Z-vg-R7X"/>
-                        <viewControllerLayoutGuide type="bottom" id="32d-4o-Pje"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xzp-kM-jqm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="29f-4A-6SZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6414" y="-2697"/>
+            <point key="canvasLocation" x="4354" y="-1219"/>
         </scene>
     </scenes>
     <resources>
@@ -664,4 +466,7 @@
         <image name="Terrace" width="280" height="280"/>
         <image name="Tower" width="300" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sWc-3u-yBm"/>
+    </inferredMetricsTieBreakers>
 </document>

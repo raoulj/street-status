@@ -13,7 +13,7 @@
         <!--Sign In Home View Controller-->
         <scene sceneID="9lb-v0-L7o">
             <objects>
-                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" customModule="StreetStatus" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ID-qk-Zgg" customClass="SignInHomeViewController" customModule="StreetSmart" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pa6-5d-FU1"/>
                         <viewControllerLayoutGuide type="bottom" id="yTx-Zc-DCi"/>
@@ -56,7 +56,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="Pcg-oB-wor">
             <objects>
-                <viewController storyboardIdentifier="SignIn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zFR-uy-L27" customClass="SignInViewController" customModule="StreetStatus" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zFR-uy-L27" customClass="SignInViewController" customModule="StreetSmart" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Izq-ir-PWZ"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ts-qe-o9Z"/>
