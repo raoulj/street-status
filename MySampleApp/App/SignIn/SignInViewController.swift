@@ -24,14 +24,22 @@ class SignInViewController: UIViewController {
 // Support code for Google provider UI.
     @IBOutlet weak var googleButton: UIButton!
 
-    @IBOutlet weak var customProviderButton: UIButton!
     @IBOutlet weak var customCreateAccountButton: UIButton!
-    @IBOutlet weak var customForgotPasswordButton: UIButton!
-    @IBOutlet weak var customUserIdField: UITextField!
-    @IBOutlet weak var customPasswordField: UITextField!
     @IBOutlet weak var leftHorizontalBar: UIView!
     @IBOutlet weak var rightHorizontalBar: UIView!
     @IBOutlet weak var orSignInWithLabel: UIView!
+    
+    // things to arrange
+    @IBOutlet weak var header: UILabel!
+    @IBOutlet weak var customUserIdField: UITextField!
+    @IBOutlet weak var customPasswordField: UITextField!
+    @IBOutlet weak var netIdUnder: UILabel!
+    @IBOutlet weak var passwordUnder: UILabel!
+    @IBOutlet weak var customForgotPasswordButton: UIButton!
+    @IBOutlet weak var customProviderButton: UIButton!
+    
+    @IBOutlet weak var userIcon: UIImageView!
+    @IBOutlet weak var passwordIcon: UIImageView!
     
     var didSignInObserver: AnyObject!
     
@@ -39,12 +47,13 @@ class SignInViewController: UIViewController {
     
     // MARK: - View lifecycle
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          print("Sign In Loading.")
         
         // background
-        //self.view.addBackground()
+        self.view.addBackground()
         
             didSignInObserver =  NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification,
                 object: AWSIdentityManager.defaultIdentityManager(),
@@ -65,7 +74,9 @@ class SignInViewController: UIViewController {
         navigationController?.view.backgroundColor = UIColor.clearColor()
         navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
         
+        
     }
+    
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)
