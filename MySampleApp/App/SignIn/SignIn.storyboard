@@ -150,6 +150,7 @@
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="top" secondItem="836-MJ-wgT" secondAttribute="bottom" constant="29" id="OEy-li-rmO"/>
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="leading" secondItem="CTo-gR-rA6" secondAttribute="leading" id="TUy-Ne-e90"/>
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="top" secondItem="836-MJ-wgT" secondAttribute="bottom" constant="29" id="VXQ-uK-q6A"/>
+                            <constraint firstItem="EHZ-W8-XEt" firstAttribute="centerX" secondItem="OG5-Wm-LSM" secondAttribute="centerX" id="Vkf-BO-kuu"/>
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="leading" secondItem="Ygm-EJ-04R" secondAttribute="leadingMargin" constant="61" id="Xj0-xP-aho"/>
                             <constraint firstItem="JBL-6p-4bg" firstAttribute="top" secondItem="CTo-gR-rA6" secondAttribute="bottom" constant="44" id="beD-cK-qEo"/>
                             <constraint firstItem="aVD-fz-jAO" firstAttribute="leading" secondItem="CTo-gR-rA6" secondAttribute="leading" id="crL-b7-48L"/>

@@ -46,7 +46,6 @@ class MainViewController: UIViewController {
         self.viewStreetButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
         self.viewTonightButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
         self.inputStatusButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
-        self.profileButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
         self.signoutButton.addTarget(self, action: #selector(MainViewController.handleLogout), forControlEvents: .TouchUpInside)
         
         signInObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {[weak self] (note: NSNotification) -> Void in
