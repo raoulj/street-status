@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "background main2.png",
+      "filename" : "withPeople_clipped_rev_1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "withPeople_clipped_rev_1-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "withPeople_clipped_rev_1-2.png",
       "scale" : "3x"
     }
   ],

@@ -23,7 +23,7 @@ class SignInHomeViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
         
         // background
-        self.view.addBackground()
+        self.view.addMainBackground()
         
     }
     
