@@ -32,17 +32,12 @@ class MainViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
         
         // background
-        self.view.addBackground()
+        self.view.addMainBackground()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.translucent = true
         navigationController?.view.backgroundColor = UIColor.clearColor()
         navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
-        
-        // Default theme settings.
-        navigationController!.navigationBar.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        navigationController!.navigationBar.barTintColor = UIColor(red: 0xF5/255.0, green: 0x85/255.0, blue: 0x35/255.0, alpha: 1.0)
-        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 
         self.viewStreetButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
         self.viewTonightButton.addTarget(self, action: #selector(MainViewController.setNavBarTitle), forControlEvents: .TouchUpInside)
