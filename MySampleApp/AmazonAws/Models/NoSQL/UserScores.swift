@@ -1,5 +1,5 @@
 //
-//  Responses.swift
+//  UserScores.swift
 //  MySampleApp
 //
 //
@@ -15,18 +15,14 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-class Responses: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class UserScores: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
-    var _responseId: String?
-    var _clubId: String?
-    var _date: String?
-    var _isOpen: NSNumber?
-    var _timestamp: NSNumber?
+    var _score: String?
     
     class func dynamoDBTableName() -> String {
 
-        return "streetstatus-mobilehub-663344442-responses"
+        return "streetstatus-mobilehub-663344442-user-scores"
     }
     
     class func hashKeyAttribute() -> String {
@@ -36,17 +32,13 @@ class Responses: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     class func rangeKeyAttribute() -> String {
 
-        return "_responseId"
+        return "_score"
     }
     
     override class func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject] {
         return [
                "_userId" : "userId",
-               "_responseId" : "responseId",
-               "_clubId" : "clubId",
-               "_date" : "date",
-               "_isOpen" : "isOpen",
-               "_timestamp" : "timestamp",
+               "_score" : "score",
         ]
     }
 }
