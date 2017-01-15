@@ -10,6 +10,8 @@
 		5A73C4A71E21A77C00134A5C /* SignInHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */; };
 		5A803D571E2BC928003DB45D /* Database in Resources */ = {isa = PBXBuildFile; fileRef = 5A803D561E2BC928003DB45D /* Database */; };
 		5AE676FA1E25F9E2000598C9 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */; };
+		5AE6FA7D1E2BCD260024FD55 /* ClubStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6FA7C1E2BCD260024FD55 /* ClubStatus.swift */; };
+		5AE6FA7F1E2BCD460024FD55 /* ClubStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6FA7E1E2BCD460024FD55 /* ClubStatus.swift */; };
 		836BE9A41E277468003929F1 /* SetBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A31E277468003929F1 /* SetBackground.swift */; };
 		836BE9A81E285ADF003929F1 /* TonightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A71E285ADF003929F1 /* TonightViewController.swift */; };
 		836BE9AA1E285BBD003929F1 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A91E285BBD003929F1 /* InputViewController.swift */; };
@@ -178,6 +180,8 @@
 		5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInHomeViewController.swift; path = mysampleapp/app/signin/SignInHomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		5A803D561E2BC928003DB45D /* Database */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Database; path = MySampleApp/App/Database; sourceTree = SOURCE_ROOT; };
 		5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubsViewController.swift; path = MySampleApp/App/ClubsViewController.swift; sourceTree = SOURCE_ROOT; };
+		5AE6FA7C1E2BCD260024FD55 /* ClubStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubStatus.swift; path = ../../../../../../../../../../../streetstatus/MySampleApp/AmazonAws/Models/NoSQL/ClubStatus.swift; sourceTree = "<group>"; };
+		5AE6FA7E1E2BCD460024FD55 /* ClubStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubStatus.swift; path = ../../../../../../../../../../../baseAmazonApp/MySampleApp/AmazonAws/Models/NoSQL/ClubStatus.swift; sourceTree = "<group>"; };
 		836BE9A31E277468003929F1 /* SetBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetBackground.swift; path = MySampleApp/App/SetBackground.swift; sourceTree = SOURCE_ROOT; };
 		836BE9A71E285ADF003929F1 /* TonightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TonightViewController.swift; path = MySampleApp/App/TonightViewController.swift; sourceTree = SOURCE_ROOT; };
 		836BE9A91E285BBD003929F1 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewController.swift; path = MySampleApp/App/InputViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -444,6 +448,8 @@
 			isa = PBXGroup;
 			children = (
 				1DD70E297F33456800000000 /* Locations.swift */,
+				5AE6FA7E1E2BCD460024FD55 /* ClubStatus.swift */,
+				5AE6FA7C1E2BCD260024FD55 /* ClubStatus.swift */,
 				1DD70E29D19B87C000000000 /* Responses.swift */,
 			);
 			name = NoSQL;
@@ -602,6 +608,7 @@
 				E7A30F044DD2B67F00000000 /* NoSQLSampleDataGenerator.swift in Sources */,
 				E7A30F04177BA8E000000000 /* UtilityFunctions.swift in Sources */,
 				E7A30F04845A053700000000 /* NoSQLTableViewController.swift in Sources */,
+				5AE6FA7D1E2BCD260024FD55 /* ClubStatus.swift in Sources */,
 				E7A30F042F2B820E00000000 /* MainViewController.swift in Sources */,
 				E7A30F04E8EEECD100000000 /* Locations.swift in Sources */,
 				5AE676FA1E25F9E2000598C9 /* ClubsViewController.swift in Sources */,
@@ -614,6 +621,7 @@
 				836BE9A41E277468003929F1 /* SetBackground.swift in Sources */,
 				E7A30F044146C30F00000000 /* CloudLogicAPIFactory.swift in Sources */,
 				E7A30F04F4F07DDA00000000 /* ResponsesTable.swift in Sources */,
+				5AE6FA7F1E2BCD460024FD55 /* ClubStatus.swift in Sources */,
 				E7A30F04DEFF4D2900000000 /* AWSAPI_IX86YNYR95_RequestSchema.m in Sources */,
 				836BE9C61E28641C003929F1 /* ClubViewController.swift in Sources */,
 				836BE9AA1E285BBD003929F1 /* InputViewController.swift in Sources */,
