@@ -111,7 +111,19 @@ class ClubsViewController: UIViewController {
         tiButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         towerButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     }
-
+    
+    // prepare for segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        let clubView = segue.destinationViewController as! ClubViewController
+        
+        // pass the clicked club to the next view controller
+        let buttonPushed = sender as! UIButton
+        let selectedClub = buttonPushed.titleLabel!
+        let clubName: String = selectedClub.text!
+        clubView.viaSegue = clubName
+    }
+    
     
     private func setNavBarTitleTo(message : String)
     {
