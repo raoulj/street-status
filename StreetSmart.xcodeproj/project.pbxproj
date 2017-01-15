@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A73C4A71E21A77C00134A5C /* SignInHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */; };
+		5A803D571E2BC928003DB45D /* Database in Resources */ = {isa = PBXBuildFile; fileRef = 5A803D561E2BC928003DB45D /* Database */; };
 		5AE676FA1E25F9E2000598C9 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */; };
 		836BE9A41E277468003929F1 /* SetBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A31E277468003929F1 /* SetBackground.swift */; };
 		836BE9A81E285ADF003929F1 /* TonightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A71E285ADF003929F1 /* TonightViewController.swift */; };
@@ -175,6 +176,7 @@
 		1DD70E29FF35641300000000 /* UserPoolMFAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPoolMFAViewController.swift; path = MySampleApp/App/SignIn/UserPools/UserPoolMFAViewController.swift; sourceTree = SOURCE_ROOT; };
 		5A2E86B01E22A6A000C0586A /* StreetSmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetSmartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A73C4A61E21A77C00134A5C /* SignInHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInHomeViewController.swift; path = mysampleapp/app/signin/SignInHomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		5A803D561E2BC928003DB45D /* Database */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Database; path = MySampleApp/App/Database; sourceTree = SOURCE_ROOT; };
 		5AE676F91E25F9E2000598C9 /* ClubsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubsViewController.swift; path = MySampleApp/App/ClubsViewController.swift; sourceTree = SOURCE_ROOT; };
 		836BE9A31E277468003929F1 /* SetBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetBackground.swift; path = MySampleApp/App/SetBackground.swift; sourceTree = SOURCE_ROOT; };
 		836BE9A71E285ADF003929F1 /* TonightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TonightViewController.swift; path = MySampleApp/App/TonightViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -307,6 +309,7 @@
 		B401C979923C5E4000000000 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5A803D561E2BC928003DB45D /* Database */,
 				1DD70E29DC758F8700000000 /* AppDelegate.swift */,
 				1DD70E291E352D6500000000 /* Images.xcassets */,
 				1DD70E29A1D5B6D500000000 /* Launch Screen.storyboard */,
@@ -540,6 +543,7 @@
 				E7A30F046E216D0300000000 /* UserIdentity.storyboard in Resources */,
 				E7A30F04E894E75700000000 /* NoSQLDatabase.storyboard in Resources */,
 				E7A30F0408D9B59800000000 /* Launch Screen.storyboard in Resources */,
+				5A803D571E2BC928003DB45D /* Database in Resources */,
 				E7A30F047E26058E00000000 /* Images.xcassets in Resources */,
 				E7A30F04FF1AB63100000000 /* CloudLogicAPI.storyboard in Resources */,
 				E7A30F0440A09CE200000000 /* UserPools.storyboard in Resources */,
