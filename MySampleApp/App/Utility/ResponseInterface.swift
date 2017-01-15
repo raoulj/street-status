@@ -16,7 +16,7 @@ import UIKit
 import AWSDynamoDB
 import AWSMobileHubHelper
 
-class ResponsesTable: NSObject, Table {
+class ResponseInterface : NSObject {
     
     var tableName: String
     var partitionKeyName: String
@@ -53,86 +53,31 @@ class ResponsesTable: NSObject, Table {
         super.init()
     }
     
-    /**
-     * Converts the attribute name from data object format to table format.
-     *
-     * - parameter dataObjectAttributeName: data object attribute name
-     * - returns: table attribute name
-     */
-
-    func tableAttributeName(dataObjectAttributeName: String) -> String {
-        return Responses.JSONKeyPathsByPropertyKey()[dataObjectAttributeName] as! String
-    }
-    
-    func getItemDescription() -> String {
-        return "Find Item with userId = \(AWSIdentityManager.defaultIdentityManager().identityId!) and responseId = \("demo-responseId-500000")."
-    }
-    
-    func getItemWithCompletionHandler(completionHandler: (response: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        objectMapper.load(Responses.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: "demo-responseId-500000", completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
-    }
-    
-    func scanDescription() -> String {
-        return "Show all items in the table."
-    }
-    
-    func scanWithCompletionHandler(completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 5
-
-        objectMapper.scan(Responses.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
-    }
-    
-    func scanWithFilterDescription() -> String {
-        return "Find all items with clubId < \("demo-clubId-500000")."
-    }
-    
-    func scanWithFilterWithCompletionHandler(completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let scanExpression = AWSDynamoDBScanExpression()
-        
-        scanExpression.filterExpression = "#clubId < :clubId"
-        scanExpression.expressionAttributeNames = ["#clubId": "clubId" ,]
-        scanExpression.expressionAttributeValues = [":clubId": "demo-clubId-500000" ,]
-
-        objectMapper.scan(Responses.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
-    }
-    
-    func insertSampleDataWithCompletionHandler(completionHandler: (errors: [NSError]?) -> Void) {
+    func insertNewResponse(club : String, date : NSDate, isOpen : Bool, completionHandler: (errors: [NSError]?) -> Void)
+    {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         var errors: [NSError] = []
         let group: dispatch_group_t = dispatch_group_create()
         let numberOfObjects = 20
         
-
-        let itemForGet = Responses()
         
-        itemForGet._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-        itemForGet._responseId = "demo-responseId-500000"
-        itemForGet._clubId = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("clubId")
-        itemForGet._date = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("date")
-        itemForGet._isOpen = NoSQLSampleDataGenerator.randomSampleBOOL()
-        itemForGet._timestamp = NoSQLSampleDataGenerator.randomSampleNumber()
+        let newResponse = Responses()
+        
+        newResponse._userId = AWSIdentityManager.defaultIdentityManager().identityId!
+        newResponse._responseId = club
+        newResponse._clubId = club
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM-dd-y"
+
+        newResponse._date = dateFormatter.stringFromDate(date)
+        newResponse._isOpen = isOpen
+        newResponse._timestamp = NSDate().timeIntervalSince1970
         
         
         dispatch_group_enter(group)
         
-
-        objectMapper.save(itemForGet, completionHandler: {(error: NSError?) -> Void in
+        objectMapper.save(newResponse, completionHandler: {(error: NSError?) -> Void in
             if error != nil {
                 dispatch_async(dispatch_get_main_queue(), {
                     errors.append(error!)
@@ -140,28 +85,6 @@ class ResponsesTable: NSObject, Table {
             }
             dispatch_group_leave(group)
         })
-        
-        for _ in 1..<numberOfObjects {
-
-            let item: Responses = Responses()
-            item._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-            item._responseId = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("responseId")
-            item._clubId = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("clubId")
-            item._date = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("date")
-            item._isOpen = NoSQLSampleDataGenerator.randomSampleBOOL()
-            item._timestamp = NoSQLSampleDataGenerator.randomSampleNumber()
-            
-            dispatch_group_enter(group)
-            
-            objectMapper.save(item, completionHandler: {(error: NSError?) -> Void in
-                if error != nil {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        errors.append(error!)
-                    })
-                }
-                dispatch_group_leave(group)
-            })
-        }
         
         dispatch_group_notify(group, dispatch_get_main_queue(), {
             if errors.count > 0 {
@@ -173,70 +96,27 @@ class ResponsesTable: NSObject, Table {
         })
     }
     
-    func removeSampleDataWithCompletionHandler(completionHandler: (errors: [NSError]?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let queryExpression = AWSDynamoDBQueryExpression()
-        queryExpression.keyConditionExpression = "#userId = :userId"
-        queryExpression.expressionAttributeNames = ["#userId": "userId"]
-        queryExpression.expressionAttributeValues = [":userId": AWSIdentityManager.defaultIdentityManager().identityId!,]
-
-        objectMapper.query(Responses.self, expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
-            if let error = error {
-                dispatch_async(dispatch_get_main_queue(), {
-                    completionHandler(errors: [error]);
-                    })
-            } else {
-                var errors: [NSError] = []
-                let group: dispatch_group_t = dispatch_group_create()
-                for item in response!.items {
-                    dispatch_group_enter(group)
-                    objectMapper.remove(item, completionHandler: {(error: NSError?) -> Void in
-                        if error != nil {
-                            dispatch_async(dispatch_get_main_queue(), {
-                                errors.append(error!)
-                            })
-                        }
-                        dispatch_group_leave(group)
-                    })
-                }
-                dispatch_group_notify(group, dispatch_get_main_queue(), {
-                    if errors.count > 0 {
-                        completionHandler(errors: errors)
-                    }
-                    else {
-                        completionHandler(errors: nil)
-                    }
-                })
+    func produceOrderedAttributeKeys(model: AWSDynamoDBObjectModel) -> [String] {
+        let keysArray = Array(model.dictionaryValue.keys)
+        var keys = keysArray as! [String]
+        keys = keys.sort()
+        
+        if (model.classForCoder.respondsToSelector("rangeKeyAttribute")) {
+            let rangeKeyAttribute = model.classForCoder.rangeKeyAttribute!()
+            let index = keys.indexOf(rangeKeyAttribute)
+            if let index = index {
+                keys.removeAtIndex(index)
+                keys.insert(rangeKeyAttribute, atIndex: 0)
             }
         }
-    }
-    
-    func updateItem(item: AWSDynamoDBObjectModel, completionHandler: (error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        
-
-        let itemToUpdate: Responses = item as! Responses
-        
-        itemToUpdate._clubId = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("clubId")
-        itemToUpdate._date = NoSQLSampleDataGenerator.randomSampleStringWithAttributeName("date")
-        itemToUpdate._isOpen = NoSQLSampleDataGenerator.randomSampleBOOL()
-        itemToUpdate._timestamp = NoSQLSampleDataGenerator.randomSampleNumber()
-        
-        objectMapper.save(itemToUpdate, completionHandler: {(error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(error: error)
-            })
-        })
-    }
-    
-    func removeItem(item: AWSDynamoDBObjectModel, completionHandler: (error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        
-        objectMapper.remove(item, completionHandler: {(error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(error: error)
-            })
-        })
+        model.classForCoder.hashKeyAttribute()
+        let hashKeyAttribute = model.classForCoder.hashKeyAttribute()
+        let index = keys.indexOf(hashKeyAttribute)
+        if let index = index {
+            keys.removeAtIndex(index)
+            keys.insert(hashKeyAttribute, atIndex: 0)
+        }
+        return keys
     }
 }
 
@@ -266,7 +146,7 @@ class ResponsesPrimaryIndex: NSObject, Index {
         queryExpression.keyConditionExpression = "#userId = :userId"
         queryExpression.expressionAttributeNames = ["#userId": "userId",]
         queryExpression.expressionAttributeValues = [":userId": AWSIdentityManager.defaultIdentityManager().identityId!,]
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -293,7 +173,7 @@ class ResponsesPrimaryIndex: NSObject, Index {
             ":clubId": "demo-clubId-500000",
         ]
         
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -319,7 +199,7 @@ class ResponsesPrimaryIndex: NSObject, Index {
             ":responseId": "demo-responseId-500000",
         ]
         
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -348,7 +228,7 @@ class ResponsesPrimaryIndex: NSObject, Index {
             ":clubId": "demo-clubId-500000",
         ]
         
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -360,7 +240,7 @@ class ResponsesPrimaryIndex: NSObject, Index {
 class ResponsesUserIdTimestamp: NSObject, Index {
     
     var indexName: String? {
-
+        
         return "userId-timestamp"
     }
     
@@ -381,12 +261,12 @@ class ResponsesUserIdTimestamp: NSObject, Index {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
-
+        
         queryExpression.indexName = "userId-timestamp"
         queryExpression.keyConditionExpression = "#userId = :userId"
         queryExpression.expressionAttributeNames = ["#userId": "userId",]
         queryExpression.expressionAttributeValues = [":userId": AWSIdentityManager.defaultIdentityManager().identityId!,]
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -402,7 +282,7 @@ class ResponsesUserIdTimestamp: NSObject, Index {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
-
+        
         queryExpression.indexName = "userId-timestamp"
         queryExpression.keyConditionExpression = "#userId = :userId"
         queryExpression.filterExpression = "#responseId > :responseId"
@@ -415,7 +295,7 @@ class ResponsesUserIdTimestamp: NSObject, Index {
             ":responseId": "demo-responseId-500000",
         ]
         
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -431,7 +311,7 @@ class ResponsesUserIdTimestamp: NSObject, Index {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
-
+        
         queryExpression.indexName = "userId-timestamp"
         queryExpression.keyConditionExpression = "#userId = :userId AND #timestamp < :timestamp"
         queryExpression.expressionAttributeNames = [
@@ -443,7 +323,7 @@ class ResponsesUserIdTimestamp: NSObject, Index {
             ":timestamp": 1111500000,
         ]
         
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -459,7 +339,7 @@ class ResponsesUserIdTimestamp: NSObject, Index {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
-
+        
         queryExpression.indexName = "userId-timestamp"
         queryExpression.keyConditionExpression = "#userId = :userId AND #timestamp < :timestamp"
         queryExpression.filterExpression = "#responseId > :responseId"
@@ -474,7 +354,7 @@ class ResponsesUserIdTimestamp: NSObject, Index {
             ":responseId": "demo-responseId-500000",
         ]
         
-
+        
         objectMapper.query(Responses.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -482,3 +362,4 @@ class ResponsesUserIdTimestamp: NSObject, Index {
         })
     }
 }
+

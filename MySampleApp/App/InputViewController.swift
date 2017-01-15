@@ -84,12 +84,15 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
         
         // get status
         let selectedStatus: String = selectStatus.titleForSegmentAtIndex(selectStatus.selectedSegmentIndex)!
+
+        let status = (selectedStatus == "Open") ? true : false;
+        
         print(selectedStatus)
         
         // enter info into database..
+        let responseInterface = ResponseInterface()
+        responseInterface.insertNewResponse(selectedClub, date: selectedDate, isOpen: status, completionHandler: ({(errors: [NSError]?) -> Void in
         
-        
+        }))
     }
-    
-    
 }
