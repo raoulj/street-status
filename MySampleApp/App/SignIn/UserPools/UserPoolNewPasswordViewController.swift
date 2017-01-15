@@ -25,6 +25,7 @@ class UserPoolNewPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addBackground()
     }
     
     

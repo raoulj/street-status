@@ -68,7 +68,9 @@ class ClubViewController: UIViewController {
     // update next 5 days
     func setDates() {
         
-        let today = NSDate()
+        var today = NSDate()
+        let timeZoneAdjust = NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: -5, toDate: today, options: [])!
+        today = timeZoneAdjust
         let formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d"
         var result = formatter.stringFromDate(today)
@@ -115,10 +117,37 @@ class ClubViewController: UIViewController {
         dayFiveLevel.textColor = UIColor.greenColor()
     }
     
+    ////////////////////////////////////
+    
     func handleOthers(club: String) {
         
         print(club)
         // find club by string in database
+    }
+    
+    ////////////////////////////////////
+    
+    func ifOpen(dayBlankStatus: UILabel) {
+        dayBlankStatus.text = openString
+    }
+    
+    func ifClosed(dayBlankStatus: UILabel) {
+        dayBlankStatus.text = closedString
+    }
+    
+    func ifHighLevelOfCertainty(dayBlankLevel: UILabel) {
+        dayBlankLevel.text = highLevel
+        dayBlankLevel.textColor = UIColor.greenColor()
+    }
+    
+    func ifMedLevelOfCertainty(dayBlankLevel: UILabel) {
+        dayBlankLevel.text = medLevel
+        dayBlankLevel.textColor = UIColor.yellowColor()
+    }
+    
+    func ifLowLevelOfCertainty(dayBlankLevel: UILabel) {
+        dayBlankLevel.text = lowLevel
+        dayBlankLevel.textColor = UIColor.redColor()
     }
     
 }

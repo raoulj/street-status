@@ -80,15 +80,35 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
         
         // get date
         let selectedDate = self.pickerDate.date
+        let timeZoneAdjust = NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: -5, toDate: selectedDate, options: [])!
         print(selectedDate)
         
         // get status
         let selectedStatus: String = selectStatus.titleForSegmentAtIndex(selectStatus.selectedSegmentIndex)!
         print(selectedStatus)
         
+        // check if date is out of 5-day range
+        let today = NSDate()
+        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -1, toDate: today, options: [])
+        let fiveDays = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: 4, toDate: today, options: [])
+        if !(selectedDate.isBetween(yesterday!, andDate: fiveDays!)) {
+            sendAlert()
+        }
+        
         // enter info into database..
         
     }
     
+    func sendAlert() {
+        let alertController = UIAlertController(title: "Out of Range", message: "Please enter a date within the next 5 days", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
+}
+
+extension NSDate {
+    func isBetween(date: NSDate, andDate: NSDate) -> Bool {
+        return date.compare(self).rawValue * self.compare(andDate).rawValue >= 0
+    }
 }
