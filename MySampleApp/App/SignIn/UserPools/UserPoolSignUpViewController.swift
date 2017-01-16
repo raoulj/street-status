@@ -32,6 +32,16 @@ class UserPoolSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pool = AWSCognitoIdentityUserPool.init(forKey: AWSCognitoUserPoolsSignInProviderKey)
+        self.view.addBackground()
+        navigationController!.navigationBar.barTintColor = UIColor(red: 0xF5/255.0, green: 0x85/255.0, blue: 0x35/255.0, alpha: 1.0)
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        userName.backgroundColor = UIColor.clearColor()
+        userName.borderStyle = UITextBorderStyle.None
+        password.backgroundColor = UIColor.clearColor()
+        password.borderStyle = UITextBorderStyle.None
+        passwordConfirmation.backgroundColor = UIColor.clearColor()
+        passwordConfirmation.borderStyle = UITextBorderStyle.None
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

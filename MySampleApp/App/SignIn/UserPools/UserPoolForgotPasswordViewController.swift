@@ -58,6 +58,9 @@ class UserPoolForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pool = AWSCognitoIdentityUserPool.init(forKey: AWSCognitoUserPoolsSignInProviderKey)
+        self.view.addBackground()
+        userName.backgroundColor = UIColor.clearColor()
+        userName.borderStyle = UITextBorderStyle.None
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

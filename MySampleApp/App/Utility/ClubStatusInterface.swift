@@ -51,9 +51,19 @@ class ClubStatusInterface: NSObject {
         super.init()
     }
     
-    func getClubStatusForDate(club : String, date : NSDate)
+    
+    func getClubStatusForDate(club : String, date : NSDate, completionHandler: (response: ClubStatus?, errors: NSError?) -> Void)
     {
+
+        let secondsSince1970 = NSCalendar.currentCalendar().startOfDayForDate(date).timeIntervalSince1970
+        print(secondsSince1970);
         
+        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        objectMapper.load(ClubStatus.self, hashKey: club, rangeKey: secondsSince1970, completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue(), {
+                    completionHandler(response: (response as! ClubStatus), errors: error)
+            })
+        })
     }
     
     func getClubStatusForDateRange(club : String, startDate : NSDate, endDate : NSDate)

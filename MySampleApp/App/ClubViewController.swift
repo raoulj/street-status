@@ -10,6 +10,8 @@ import AWSMobileHubHelper
 
 class ClubViewController: UIViewController {
     
+    let LOW_CONF_MAX = 0.50
+    let MED_CONF_MAX = 0.75
     
     @IBOutlet weak var clubImage: UIImageView!
     @IBOutlet weak var viaSegueLabel: UILabel!
@@ -41,6 +43,11 @@ class ClubViewController: UIViewController {
     @IBOutlet weak var dayFourLevel: UILabel!
     @IBOutlet weak var dayFiveLevel: UILabel!
     
+    //arrays for of the labels for convenience
+    private var dayStatuses : [UILabel] = [];
+    private var dayLevel : [UILabel] = [];
+    
+    
     override func viewDidLoad() {
         
         //background
@@ -53,6 +60,14 @@ class ClubViewController: UIViewController {
         
         // dates
         setDates()
+        
+        dayStatuses = [
+            dayOneStatus, dayTwoStatus, dayThreeStatus, dayFourStatus, dayFiveStatus
+        ];
+        
+        dayLevel = [
+            dayOneLevel, dayTwoLevel, dayThreeLevel, dayFourLevel, dayFiveLevel
+        ];
         
         // if Campus
         if viaSegue == "Campus Club" {
@@ -68,7 +83,9 @@ class ClubViewController: UIViewController {
     // update next 5 days
     func setDates() {
         
-        let today = NSDate()
+        var today = NSDate()
+        let timeZoneAdjust = NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: -5, toDate: today, options: [])!
+        today = timeZoneAdjust
         let formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d"
         var result = formatter.stringFromDate(today)
@@ -115,10 +132,64 @@ class ClubViewController: UIViewController {
         dayFiveLevel.textColor = UIColor.greenColor()
     }
     
+    ////////////////////////////////////
+    
     func handleOthers(club: String) {
         
-        print(club)
-        // find club by string in database
+        var date = NSDate() //date starts out as today
+        let clubStatusInterface = ClubStatusInterface()
+        
+        for i in 0..<5 {
+            clubStatusInterface.getClubStatusForDate(club, date: date) { (clubStatus, errors) in
+                self.dayStatuses[i].text = (clubStatus!.isOpen()) ? "Open" : "Closed"
+                let confidence = clubStatus?.getConfidence()
+                
+                if (confidence < self.LOW_CONF_MAX) {
+                    self.dayLevel[i].textColor = UIColor.redColor()
+                    self.dayLevel[i].text = self.lowLevel
+                } else if (confidence < self.MED_CONF_MAX) {
+                    self.dayLevel[i].textColor = UIColor.yellowColor()
+                    self.dayLevel[i].text = self.medLevel
+                } else {
+                    self.dayLevel[i].textColor = UIColor.greenColor()
+                    self.dayLevel[i].text = self.highLevel
+                }
+            }
+            
+            //get the next day
+            date = NSCalendar.currentCalendar()
+                .dateByAddingUnit(
+                    .Day,
+                    value: 1,
+                    toDate: date,
+                    options: []
+                )!
+        }
+    }
+    
+    ////////////////////////////////////
+    
+    func ifOpen(dayBlankStatus: UILabel) {
+        dayBlankStatus.text = openString
+    }
+    
+    func ifClosed(dayBlankStatus: UILabel) {
+        dayBlankStatus.text = closedString
+    }
+    
+    func ifHighLevelOfCertainty(dayBlankLevel: UILabel) {
+        dayBlankLevel.text = highLevel
+        dayBlankLevel.textColor = UIColor.greenColor()
+    }
+    
+    func ifMedLevelOfCertainty(dayBlankLevel: UILabel) {
+        dayBlankLevel.text = medLevel
+        dayBlankLevel.textColor = UIColor.yellowColor()
+    }
+    
+    func ifLowLevelOfCertainty(dayBlankLevel: UILabel) {
+        dayBlankLevel.text = lowLevel
+        dayBlankLevel.textColor = UIColor.redColor()
     }
     
 }

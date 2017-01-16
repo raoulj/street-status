@@ -29,6 +29,11 @@ class UserPoolSignUpConfirmationViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userName.text = self.user!.username;
+        self.view.addBackground()
+        userName.backgroundColor = UIColor.clearColor()
+        userName.borderStyle = UITextBorderStyle.None
+        confirmationCode.backgroundColor = UIColor.clearColor()
+        confirmationCode.borderStyle = UITextBorderStyle.None
     }
     
     @IBAction func onConfirm(sender: AnyObject) {
