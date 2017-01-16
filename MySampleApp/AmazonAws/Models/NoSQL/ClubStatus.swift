@@ -20,6 +20,7 @@ class ClubStatus: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _club: String?
     var _nightOf: NSNumber?
     var _isOpen: NSNumber?
+    var _confidence : NSNumber?
     
     class func dynamoDBTableName() -> String {
 
@@ -35,12 +36,20 @@ class ClubStatus: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
 
         return "_nightOf"
     }
+
+    func isOpen() -> Bool {
+        return _isOpen as! Bool
+    }
+    
+    func getConfidence() -> Double {
+        return _confidence as! Double
+    }
     
     override class func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject] {
         return [
                "_club" : "club",
                "_nightOf" : "night_of",
-               "_isOpen" : "is_open",
+               "_isOpen" : "isOpen",
                "_confidence" : "confidence"
         ]
     }

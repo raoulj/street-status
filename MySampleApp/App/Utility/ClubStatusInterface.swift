@@ -16,7 +16,7 @@ import UIKit
 import AWSDynamoDB
 import AWSMobileHubHelper
 
-class ClubStatusTable: NSObject, Table {
+class ClubStatusInterface: NSObject {
     
     var tableName: String
     var partitionKeyName: String
@@ -41,9 +41,7 @@ class ClubStatusTable: NSObject, Table {
         partitionKeyName = model.classForCoder.hashKeyAttribute()
         partitionKeyType = "String"
         indexes = [
-
             ClubStatusPrimaryIndex(),
-
             ClubStatusQueryByDay(),
         ]
         if (model.classForCoder.respondsToSelector("rangeKeyAttribute")) {
@@ -53,165 +51,51 @@ class ClubStatusTable: NSObject, Table {
         super.init()
     }
     
-    /**
-     * Converts the attribute name from data object format to table format.
-     *
-     * - parameter dataObjectAttributeName: data object attribute name
-     * - returns: table attribute name
-     */
+    
+    func getClubStatusForDate(club : String, date : NSDate, completionHandler: (response: ClubStatus?, errors: NSError?) -> Void)
+    {
 
-    func tableAttributeName(dataObjectAttributeName: String) -> String {
-        return ClubStatus.JSONKeyPathsByPropertyKey()[dataObjectAttributeName] as! String
-    }
-    
-    func getItemDescription() -> String {
-        return "Find Item with club = \("demo-club-3") and night_of = \(1111500000)."
-    }
-    
-    func getItemWithCompletionHandler(completionHandler: (response: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
+        let secondsSince1970 = NSCalendar.currentCalendar().startOfDayForDate(date).timeIntervalSince1970
+        print(secondsSince1970);
+        
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        objectMapper.load(ClubStatus.self, hashKey: "demo-club-3", rangeKey: 1111500000, completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
-    }
-    
-    func scanDescription() -> String {
-        return "Show all items in the table."
-    }
-    
-    func scanWithCompletionHandler(completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 5
-
-        objectMapper.scan(ClubStatus.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
-    }
-    
-    
-    func insertSampleDataWithCompletionHandler(completionHandler: (errors: [NSError]?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        var errors: [NSError] = []
-        let group: dispatch_group_t = dispatch_group_create()
-        let numberOfObjects = 20
-        
-
-        let itemForGet = ClubStatus()
-        
-        itemForGet._club = "demo-club-3"
-        itemForGet._nightOf = 1111500000
-        itemForGet._isOpen = NoSQLSampleDataGenerator.randomSampleBOOL()
-        
-        
-        dispatch_group_enter(group)
-        
-
-        objectMapper.save(itemForGet, completionHandler: {(error: NSError?) -> Void in
-            if error != nil {
+        objectMapper.load(ClubStatus.self, hashKey: club, rangeKey: secondsSince1970, completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
-                    errors.append(error!)
-                })
-            }
-            dispatch_group_leave(group)
-        })
-        
-        for _ in 1..<numberOfObjects {
-
-            let item: ClubStatus = ClubStatus()
-            item._club = NoSQLSampleDataGenerator.randomPartitionSampleStringWithAttributeName("club")
-            item._nightOf = NoSQLSampleDataGenerator.randomPartitionSampleNumber()
-            item._isOpen = NoSQLSampleDataGenerator.randomSampleBOOL()
-            
-            dispatch_group_enter(group)
-            
-            objectMapper.save(item, completionHandler: {(error: NSError?) -> Void in
-                if error != nil {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        errors.append(error!)
-                    })
-                }
-                dispatch_group_leave(group)
+                    completionHandler(response: (response as! ClubStatus), errors: error)
             })
-        }
-        
-        dispatch_group_notify(group, dispatch_get_main_queue(), {
-            if errors.count > 0 {
-                completionHandler(errors: errors)
-            }
-            else {
-                completionHandler(errors: nil)
-            }
         })
     }
     
-    func removeSampleDataWithCompletionHandler(completionHandler: (errors: [NSError]?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.filterExpression = "begins_with(#club, :club)"
-        scanExpression.expressionAttributeNames = ["#club": "club"]
-        scanExpression.expressionAttributeValues = [":club": "demo-"]
-
-        objectMapper.scan(ClubStatus.self, expression: scanExpression) { (response: AWSDynamoDBPaginatedOutput?, error: NSError?) in
-            if let error = error {
-                dispatch_async(dispatch_get_main_queue(), {
-                    completionHandler(errors: [error]);
-                    })
-            } else {
-                var errors: [NSError] = []
-                let group: dispatch_group_t = dispatch_group_create()
-                for item in response!.items {
-                    dispatch_group_enter(group)
-                    objectMapper.remove(item, completionHandler: {(error: NSError?) -> Void in
-                        if error != nil {
-                            dispatch_async(dispatch_get_main_queue(), {
-                                errors.append(error!)
-                            })
-                        }
-                        dispatch_group_leave(group)
-                    })
-                }
-                dispatch_group_notify(group, dispatch_get_main_queue(), {
-                    if errors.count > 0 {
-                        completionHandler(errors: errors)
-                    }
-                    else {
-                        completionHandler(errors: nil)
-                    }
-                })
+    func getClubStatusForDateRange(club : String, startDate : NSDate, endDate : NSDate)
+    {
+        
+    }
+    
+    func produceOrderedAttributeKeys(model: AWSDynamoDBObjectModel) -> [String] {
+        let keysArray = Array(model.dictionaryValue.keys)
+        var keys = keysArray as! [String]
+        keys = keys.sort()
+        
+        if (model.classForCoder.respondsToSelector("rangeKeyAttribute")) {
+            let rangeKeyAttribute = model.classForCoder.rangeKeyAttribute!()
+            let index = keys.indexOf(rangeKeyAttribute)
+            if let index = index {
+                keys.removeAtIndex(index)
+                keys.insert(rangeKeyAttribute, atIndex: 0)
             }
         }
+        model.classForCoder.hashKeyAttribute()
+        let hashKeyAttribute = model.classForCoder.hashKeyAttribute()
+        let index = keys.indexOf(hashKeyAttribute)
+        if let index = index {
+            keys.removeAtIndex(index)
+            keys.insert(hashKeyAttribute, atIndex: 0)
+        }
+        return keys
     }
-    
-    func updateItem(item: AWSDynamoDBObjectModel, completionHandler: (error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        
 
-        let itemToUpdate: ClubStatus = item as! ClubStatus
-        
-        itemToUpdate._isOpen = NoSQLSampleDataGenerator.randomSampleBOOL()
-        
-        objectMapper.save(itemToUpdate, completionHandler: {(error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(error: error)
-            })
-        })
-    }
-    
-    func removeItem(item: AWSDynamoDBObjectModel, completionHandler: (error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        
-        objectMapper.remove(item, completionHandler: {(error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(error: error)
-            })
-        })
-    }
 }
+
 
 class ClubStatusPrimaryIndex: NSObject, Index {
     
@@ -237,7 +121,7 @@ class ClubStatusPrimaryIndex: NSObject, Index {
         queryExpression.keyConditionExpression = "#club = :club"
         queryExpression.expressionAttributeNames = ["#club": "club",]
         queryExpression.expressionAttributeValues = [":club": "demo-club-3",]
-
+        
         objectMapper.query(ClubStatus.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -263,7 +147,7 @@ class ClubStatusPrimaryIndex: NSObject, Index {
             ":nightOf": 1111500000,
         ]
         
-
+        
         objectMapper.query(ClubStatus.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -276,7 +160,7 @@ class ClubStatusPrimaryIndex: NSObject, Index {
 class ClubStatusQueryByDay: NSObject, Index {
     
     var indexName: String? {
-
+        
         return "query_by_day"
     }
     
@@ -295,12 +179,12 @@ class ClubStatusQueryByDay: NSObject, Index {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
-
+        
         queryExpression.indexName = "query_by_day"
         queryExpression.keyConditionExpression = "#nightOf = :nightOf"
         queryExpression.expressionAttributeNames = ["#nightOf": "night_of",]
         queryExpression.expressionAttributeValues = [":nightOf": 1111000003,]
-
+        
         objectMapper.query(ClubStatus.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -316,7 +200,7 @@ class ClubStatusQueryByDay: NSObject, Index {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
-
+        
         queryExpression.indexName = "query_by_day"
         queryExpression.keyConditionExpression = "#nightOf = :nightOf AND #club < :club"
         queryExpression.expressionAttributeNames = [
@@ -328,7 +212,7 @@ class ClubStatusQueryByDay: NSObject, Index {
             ":club": "demo-club-500000",
         ]
         
-
+        
         objectMapper.query(ClubStatus.self, expression: queryExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
@@ -337,3 +221,4 @@ class ClubStatusQueryByDay: NSObject, Index {
     }
     
 }
+
