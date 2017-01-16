@@ -19,6 +19,7 @@
 		836BE9A81E285ADF003929F1 /* TonightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A71E285ADF003929F1 /* TonightViewController.swift */; };
 		836BE9AA1E285BBD003929F1 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9A91E285BBD003929F1 /* InputViewController.swift */; };
 		836BE9C61E28641C003929F1 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836BE9C51E28641C003929F1 /* ClubViewController.swift */; };
+		83D25FEA1E2CDB0F00E980E8 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D25FE91E2CDB0F00E980E8 /* KeyboardLayoutConstraint.swift */; };
 		E7A30F0408D9B59800000000 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29A1D5B6D500000000 /* Launch Screen.storyboard */; };
 		E7A30F040B66B09500000000 /* AWSAPIGateway.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29640DDD5A00000000 /* AWSAPIGateway.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7A30F040B66B09500000001 /* AWSAPIGateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29640DDD5A00000000 /* AWSAPIGateway.framework */; };
@@ -149,6 +150,7 @@
 		836BE9A71E285ADF003929F1 /* TonightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TonightViewController.swift; path = MySampleApp/App/TonightViewController.swift; sourceTree = SOURCE_ROOT; };
 		836BE9A91E285BBD003929F1 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewController.swift; path = MySampleApp/App/InputViewController.swift; sourceTree = SOURCE_ROOT; };
 		836BE9C51E28641C003929F1 /* ClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClubViewController.swift; path = MySampleApp/App/ClubViewController.swift; sourceTree = SOURCE_ROOT; };
+		83D25FE91E2CDB0F00E980E8 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = MySampleApp/KeyboardLayoutConstraint.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				B401C979B400B14400000000 /* SupportingFiles */,
 				B401C979BC88583400000000 /* Utility */,
 				8347A3781E2C2F4200FDA76A /* StreetViewController.swift */,
+				83D25FE91E2CDB0F00E980E8 /* KeyboardLayoutConstraint.swift */,
 			);
 			name = App;
 			path = mysampleapp/app;
@@ -513,6 +516,7 @@
 				836BE9AA1E285BBD003929F1 /* InputViewController.swift in Sources */,
 				E7A30F04EF7BC39000000000 /* AWSConfiguration.swift in Sources */,
 				5A73C4A71E21A77C00134A5C /* SignInHomeViewController.swift in Sources */,
+				83D25FEA1E2CDB0F00E980E8 /* KeyboardLayoutConstraint.swift in Sources */,
 				E7A30F04443982F900000000 /* SignInViewControllerExtensions.swift in Sources */,
 				5AB45EB71E2BD057000BA547 /* ClubStatusInterface.swift in Sources */,
 				5AB45EB01E2BCE1E000BA547 /* UserScores.swift in Sources */,

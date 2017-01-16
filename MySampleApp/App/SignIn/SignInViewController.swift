@@ -78,9 +78,7 @@ class SignInViewController: UIViewController {
         navigationController?.view.backgroundColor = UIColor.clearColor()
         navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
         
-        
     }
-    
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)
