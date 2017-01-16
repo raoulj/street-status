@@ -81,7 +81,7 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
         // get date
         let selectedDate = self.pickerDate.date
         let timeZoneAdjust = NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: -5, toDate: selectedDate, options: [])!
-        print(selectedDate)
+        print(timeZoneAdjust)
         
         // get status
         let selectedStatus: String = selectStatus.titleForSegmentAtIndex(selectStatus.selectedSegmentIndex)!

@@ -34,9 +34,8 @@
                                     <constraint firstAttribute="height" constant="230" id="xV3-cp-eFA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered by Princeton Students" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giW-SB-bDj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Powered by Princeton Students" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giW-SB-bDj">
                                 <rect key="frame" x="67" y="495" width="241" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +44,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tB7-1s-UUU" firstAttribute="top" secondItem="xOy-4y-Jgh" secondAttribute="bottom" constant="8" symbolic="YES" id="Tce-R8-ODG"/>
+                            <constraint firstItem="giW-SB-bDj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UbD-OZ-0L6"/>
                             <constraint firstItem="tB7-1s-UUU" firstAttribute="centerX" secondItem="xOy-4y-Jgh" secondAttribute="centerX" id="dfs-vQ-t15"/>
+                            <constraint firstItem="giW-SB-bDj" firstAttribute="top" secondItem="tB7-1s-UUU" secondAttribute="bottom" constant="8" id="fv0-Bg-3Ar"/>
                             <constraint firstItem="xOy-4y-Jgh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lcW-sb-PuS"/>
                             <constraint firstItem="xOy-4y-Jgh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pGd-0U-ZGj"/>
                         </constraints>

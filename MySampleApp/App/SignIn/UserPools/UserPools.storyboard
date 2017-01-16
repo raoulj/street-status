@@ -467,7 +467,7 @@
     <resources>
         <image name="Checkmark" width="256" height="256"/>
         <image name="Email" width="300" height="300"/>
-        <image name="Login Lock" width="37" height="46"/>
-        <image name="Login Person" width="46" height="46"/>
+        <image name="Login Lock" width="400" height="512"/>
+        <image name="Login Person" width="256" height="256"/>
     </resources>
 </document>

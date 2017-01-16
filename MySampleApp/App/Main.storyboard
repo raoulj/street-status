@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,100 +31,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlw-pR-5cX">
-                                <rect key="frame" x="40" y="360" width="296" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="T5x-2U-lfw"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="kZw-Wq-nP4"/>
-                                    <constraint firstAttribute="width" constant="296" id="oA1-K2-Cjj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
-                                <state key="normal" title="Input Club Status" backgroundImage="Button Background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="wAf-fP-Tet" kind="show" id="IJW-6T-bIv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZz-xb-r6M">
-                                <rect key="frame" x="40" y="308" width="296" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="18y-2s-TvB"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="BwW-aJ-NCe"/>
-                                    <constraint firstAttribute="width" constant="296" id="IA6-sS-YGK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
-                                <state key="normal" title="What's Open Tonight?" backgroundImage="Button Background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="JrW-yW-D1p" kind="show" id="007-5m-hP6"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84R-s9-YUF">
-                                <rect key="frame" x="16" y="84" width="343" height="172"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AxC-rf-9gZ">
+                                <rect key="frame" x="16" y="24.113021935494544" width="343" height="622.00000000000011"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-CP-bTB">
-                                        <rect key="frame" x="171.5" y="98.5" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwH-73-6WX">
+                                        <rect key="frame" x="23" y="339" width="296" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                        <state key="normal" title="Street View" backgroundImage="Button Background">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="zlZ-2c-1fk" kind="show" id="YGy-P7-hPY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZz-xb-r6M">
+                                        <rect key="frame" x="23" y="401" width="296" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                        <state key="normal" title="What's Open Tonight?" backgroundImage="Button Background">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="JrW-yW-D1p" kind="show" id="007-5m-hP6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlw-pR-5cX">
+                                        <rect key="frame" x="23" y="463" width="296" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                        <state key="normal" title="Input Club Status" backgroundImage="Button Background">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="wAf-fP-Tet" kind="show" id="IJW-6T-bIv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dw-1e-kRM">
+                                        <rect key="frame" x="23" y="560" width="296" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                        <state key="normal" title="Leave the Street" backgroundImage="Button Background">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVS-by-Y5T">
+                                        <rect key="frame" x="23" y="277" width="296" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                        <state key="normal" title="View the Clubs" backgroundImage="Button Background">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7Js-hy-5GO" kind="show" id="N9n-Ay-r5h"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="197" id="EBb-bo-L5o"/>
-                                    <constraint firstItem="FQq-CP-bTB" firstAttribute="centerY" secondItem="84R-s9-YUF" secondAttribute="centerY" id="LtB-lt-fas"/>
-                                    <constraint firstItem="FQq-CP-bTB" firstAttribute="centerX" secondItem="84R-s9-YUF" secondAttribute="centerX" id="kzc-pc-S71"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVS-by-Y5T">
-                                <rect key="frame" x="39" y="256" width="296" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="296" id="Ypl-LP-DgS"/>
-                                    <constraint firstAttribute="height" constant="60" id="mwd-89-oun"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="vyV-gA-FFX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
-                                <state key="normal" title="View the Street" backgroundImage="Button Background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="7Js-hy-5GO" kind="show" id="mRm-Qg-ykD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dw-1e-kRM">
-                                <rect key="frame" x="40" y="412" width="296" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="7hx-v1-Z76"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Xm5-Ip-uVq"/>
-                                    <constraint firstAttribute="width" constant="296" id="gAc-B0-scn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
-                                <state key="normal" title="Leave the Street" backgroundImage="Button Background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Rlw-pR-5cX" firstAttribute="centerX" secondItem="Skv-l0-QUZ" secondAttribute="centerX" id="71z-sD-uKh"/>
-                            <constraint firstItem="mVS-by-Y5T" firstAttribute="top" secondItem="84R-s9-YUF" secondAttribute="bottom" constant="40" id="8wF-sx-Gnf"/>
-                            <constraint firstItem="Rlw-pR-5cX" firstAttribute="top" secondItem="fZz-xb-r6M" secondAttribute="bottom" constant="20" id="Asv-zd-gzw"/>
-                            <constraint firstItem="mVS-by-Y5T" firstAttribute="top" secondItem="84R-s9-YUF" secondAttribute="bottom" constant="13" id="DH3-aP-Q88"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="84R-s9-YUF" secondAttribute="trailing" id="LHb-7Z-ooh"/>
-                            <constraint firstItem="mVS-by-Y5T" firstAttribute="top" secondItem="84R-s9-YUF" secondAttribute="bottom" id="Mjo-9W-Q72"/>
-                            <constraint firstItem="fZz-xb-r6M" firstAttribute="top" secondItem="mVS-by-Y5T" secondAttribute="bottom" constant="20" id="OFW-6T-BAe"/>
-                            <constraint firstItem="84R-s9-YUF" firstAttribute="top" secondItem="AOA-Hd-PSK" secondAttribute="bottom" constant="20" id="Ph1-2l-Dcw"/>
-                            <constraint firstItem="mVS-by-Y5T" firstAttribute="top" secondItem="84R-s9-YUF" secondAttribute="bottom" constant="40" id="R0r-O7-waI"/>
-                            <constraint firstItem="Rlw-pR-5cX" firstAttribute="top" secondItem="fZz-xb-r6M" secondAttribute="bottom" constant="13" id="V6A-aC-xcX"/>
-                            <constraint firstItem="9dw-1e-kRM" firstAttribute="centerX" secondItem="Skv-l0-QUZ" secondAttribute="centerX" id="Z0o-ft-FC4"/>
-                            <constraint firstItem="9dw-1e-kRM" firstAttribute="top" secondItem="Rlw-pR-5cX" secondAttribute="bottom" constant="20" id="Zcm-Od-ZhF"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="84R-s9-YUF" secondAttribute="leading" id="aiz-4W-zMi"/>
-                            <constraint firstItem="fZz-xb-r6M" firstAttribute="centerX" secondItem="Skv-l0-QUZ" secondAttribute="centerX" id="nat-5J-LjA"/>
-                            <constraint firstItem="fZz-xb-r6M" firstAttribute="top" secondItem="mVS-by-Y5T" secondAttribute="bottom" constant="39" id="pD7-qG-IPb"/>
-                            <constraint firstItem="mVS-by-Y5T" firstAttribute="centerX" secondItem="Skv-l0-QUZ" secondAttribute="centerX" id="vSR-sI-ZDn"/>
-                            <constraint firstItem="Rlw-pR-5cX" firstAttribute="top" secondItem="fZz-xb-r6M" secondAttribute="bottom" constant="13" id="ysa-oD-JQv"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wI4-Ua-jy5"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -180,10 +145,6 @@
                                 <rect key="frame" x="16" y="59.510226146849618" width="342.99999999999955" height="551.00000000000023"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="kET-SR-O1I">
-                                        <rect key="frame" x="-15" y="21" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="___________________________________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbW-zp-Dra">
                                         <rect key="frame" x="45" y="216" width="253" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -242,6 +203,10 @@
                                             <action selector="pushSubmit:" destination="wAf-fP-Tet" eventType="touchUpInside" id="B1p-GQ-Mgn"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="houses" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-PT-MGd">
+                                        <rect key="frame" x="1" y="8" width="343" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </view>
                         </subviews>
@@ -256,7 +221,169 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wI-Qm-3gX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112.8000000000002" y="118.29085457271366"/>
+            <point key="canvasLocation" x="3112.8000000000002" y="152.47376311844079"/>
+        </scene>
+        <!--Street View Controller-->
+        <scene sceneID="2cJ-JE-SYW">
+            <objects>
+                <viewController id="zlZ-2c-1fk" customClass="StreetViewController" customModule="StreetSmart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sly-CQ-Qks"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2d-Gv-9F1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5zv-1H-0UV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D1P-Ic-nLV">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white street" translatesAutoresizingMaskIntoConstraints="NO" id="Qz9-6w-yNF">
+                                        <rect key="frame" x="51" y="0.0" width="240" height="682"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdr-1X-uct">
+                                        <rect key="frame" x="21" y="236" width="100" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Tiger Inn" backgroundImage="TI Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="7OL-qy-uih"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVS-d2-mla">
+                                        <rect key="frame" x="24" y="327" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Colonial" backgroundImage="Colonial Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="Png-5D-jr8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-SL-bHf">
+                                        <rect key="frame" x="226" y="8" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Charter" backgroundImage="Charter Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="uXb-UA-Ns3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOP-A6-jES">
+                                        <rect key="frame" x="213" y="75" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Cloister" backgroundImage="Cloister Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="T7H-YL-6dE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z7-7a-JVd">
+                                        <rect key="frame" x="265" y="131" width="99" height="87"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Cap &amp; Gown" backgroundImage="Cap Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="mqH-9A-IH8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYV-XE-QBg">
+                                        <rect key="frame" x="213" y="197" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Cottage" backgroundImage="Cottage Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="nFt-ll-3vL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txi-Gx-0Jk">
+                                        <rect key="frame" x="229" y="261" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Ivy" backgroundImage="Ivy Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="yTI-Dy-vYA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9H-4e-4hk">
+                                        <rect key="frame" x="229" y="327" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Quad" backgroundImage="Quad Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="FvF-u0-HHJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssu-41-Fy5">
+                                        <rect key="frame" x="226" y="404" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Cannon" backgroundImage="Cannon Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="ceu-CJ-Crh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxc-wY-Prz">
+                                        <rect key="frame" x="226" y="480" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Tower" backgroundImage="Tower Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="Ax4-sB-NdS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxO-9M-ZA3">
+                                        <rect key="frame" x="213" y="552" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Campus Club" backgroundImage="Campus Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="0sV-EG-WOO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5g-By-NPT">
+                                        <rect key="frame" x="269" y="597" width="95" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Terrace" backgroundImage="Terrace Silo">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Yoc-Zq-c7w" kind="show" id="wqm-Zd-2C9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74901960779999999" green="0.74906712769999995" blue="0.7489288449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfj-f2-3dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2218" y="-1219"/>
         </scene>
         <!--Tonight View Controller-->
         <scene sceneID="DfG-Fz-aya">
@@ -271,34 +398,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWZ-H9-BFO">
-                                <rect key="frame" x="16" y="88" width="343" height="490"/>
+                                <rect key="frame" x="4" y="0.0" width="371" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-zD-xdM">
-                                        <rect key="frame" x="0.0" y="52" width="335" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pole" translatesAutoresizingMaskIntoConstraints="NO" id="uI9-3r-Kut">
+                                        <rect key="frame" x="334" y="91" width="29" height="576"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's Open Tonight?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBP-fL-Dlk">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adk-5l-67c">
+                                        <rect key="frame" x="8" y="109" width="363" height="151"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Button Background" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-GM-TFe">
+                                                <rect key="frame" x="8" y="0.0" width="347" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's Open Tonight?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBP-fL-Dlk">
+                                                <rect key="frame" x="30" y="7" width="302" height="71"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Button Background" translatesAutoresizingMaskIntoConstraints="NO" id="XEL-St-PfQ">
+                                                <rect key="frame" x="115" y="93" width="240" height="58"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-zD-xdM">
+                                                <rect key="frame" x="115" y="112" width="240" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Campus Club is ALWAYS open" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s5j-8r-XVv">
-                                        <rect key="frame" x="0.0" y="106" width="335" height="259"/>
+                                        <rect key="frame" x="8" y="313" width="335" height="259"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See you on the Street" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVO-z8-tWN">
-                                        <rect key="frame" x="0.0" y="405" width="335" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Good luck with your Prospect 11!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3L-Zt-3ks">
+                                        <rect key="frame" x="8" y="595" width="355" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -308,6 +453,8 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="goodLuck" destination="N3L-Zt-3ks" id="Vfg-GQ-w3z"/>
+                        <outlet property="header" destination="rBP-fL-Dlk" id="QSY-Yr-iM9"/>
                         <outlet property="listOfOpenClubs" destination="s5j-8r-XVv" id="hOC-TT-jNp"/>
                         <outlet property="todayDate" destination="8xX-zD-xdM" id="bbK-P7-ZKo"/>
                     </connections>
@@ -541,7 +688,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m3-pp-seU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112.8000000000002" y="-1219.3403298350825"/>
+            <point key="canvasLocation" x="3113" y="-1219"/>
         </scene>
         <!--Club View Controller-->
         <scene sceneID="Mqu-gE-3ys">
@@ -756,23 +903,37 @@
     <resources>
         <image name="Button Background" width="315" height="79"/>
         <image name="Campus Front" width="4014" height="2676"/>
+        <image name="Campus Silo" width="90" height="93"/>
         <image name="Campus logo" width="164" height="164"/>
+        <image name="Cannon Silo" width="79" height="65"/>
         <image name="Cannon logo" width="424" height="424"/>
+        <image name="Cap Silo" width="96" height="92"/>
         <image name="Cap logo" width="150" height="138"/>
+        <image name="Charter Silo" width="107" height="96"/>
         <image name="Charter logo" width="441" height="423"/>
+        <image name="Cloister Silo" width="93" height="99"/>
         <image name="Cloister logo" width="536" height="443"/>
+        <image name="Colonial Silo" width="91" height="86"/>
         <image name="Colonial logo" width="300" height="300"/>
+        <image name="Cottage Silo" width="100" height="116"/>
         <image name="Cottage logo" width="136" height="143"/>
+        <image name="Ivy Silo" width="90" height="93"/>
         <image name="Ivy logo" width="125" height="125"/>
         <image name="Quad" width="422" height="448"/>
+        <image name="Quad Silo" width="98" height="102"/>
         <image name="TI" width="434" height="451"/>
+        <image name="TI Silo" width="89" height="91"/>
+        <image name="Terrace Silo" width="85" height="92"/>
         <image name="Terrace logo" width="280" height="280"/>
+        <image name="Tower Silo" width="109" height="98"/>
         <image name="Tower logo" width="300" height="300"/>
         <image name="calendar" width="300" height="300"/>
-        <image name="home" width="512" height="512"/>
+        <image name="houses" width="941" height="150"/>
+        <image name="pole" width="18" height="943"/>
+        <image name="white street" width="200" height="943"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="is2-69-dfp"/>
-        <segue reference="tZC-qu-ZjW"/>
+        <segue reference="IJW-6T-bIv"/>
+        <segue reference="yTI-Dy-vYA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -48,6 +48,7 @@ class ClubViewController: UIViewController {
         
         // club specifics
         viaSegueLabel.text = viaSegue
+        print(viaSegue)
         let image = UIImage(named: viaSegue)
         clubImage.image = image!
         
